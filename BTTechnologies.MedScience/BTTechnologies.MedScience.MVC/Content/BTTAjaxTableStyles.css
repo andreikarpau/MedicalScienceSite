@@ -1,0 +1,148 @@
+﻿.BTT-ajax-table-container {
+    border: 1px solid #787878;
+}
+
+.BTT-ajax-table 
+{
+    font-size: .65em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    text-wrap: normal;
+    color: #333;
+    margin: 0px;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.BTT-ajax-table > tbody {
+        border: 1px solid #DBE2E2;
+}
+
+.BTT-ajax-table > tbody > tr > td  {
+    font-size: 1.5em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;    
+    border-right: 1px solid #DBE2E2;
+    border-bottom: 1px solid #DBE2E2;
+    padding: 5px 5px 5px 5px;
+    width: 100%;
+    text-overflow:ellipsis;
+    overflow: hidden;
+}
+
+.hidden-column, .hidden-item {
+    display: none;
+}
+
+.BTT-ajax-icon-column {
+    width: 35px;
+}
+
+.BTT-ajax-table-header {
+    background-color: #e2e2e2;
+    border-right: 1px solid #DBE2E2;
+}
+
+.BTT-ajax-sortable-header {
+    cursor: pointer;
+}
+
+.BTT-ajax-sortable-header:hover {
+    color: #395475;
+}
+
+.BTT-ajax-table-header td {
+    padding: 5px 0px 5px 15px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.BTT-ajax-table-header img 
+{
+    float: right;    
+}
+
+.BTT-ajax-table-sortable-img {
+}
+
+.BTT-ajax-table-footer {
+    height: 30px;
+    border-top: 1px solid #787878;     
+    background-color: #e2e2e2;
+    text-align: center;
+}
+
+.sortable-header {
+    cursor: pointer;
+}
+
+.hidden-column {
+    visibility: hidden;
+}
+
+.BTT-ajax-table-perPage-button {
+    display: block;
+    border: 1px solid #787878;     
+    width: 13px;
+    height: 13px;
+    float: right;
+    margin: 10px 10px 0px 0px;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+.BTT-ajax-table-perPage-button:hover:not(.BTT-ajax-table-selected-item) {
+    border: 1px solid #395475;     
+}
+
+.BTT-ajax-table-prePage-button:hover {
+    cursor: pointer;
+}
+
+.BTT-ajax-table-selected-item {
+    background-color: #395475;
+    color: white;
+}
+
+.BTT-ajax-table-curpage-and-arrows 
+{
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 70px;
+    text-align: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.BTT-ajax-table-curpage-and-arrows input {
+    width: 25px;
+    text-align: center;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    font-size: .8em;
+}
+
+.BTT-ajax-table-curpage-and-arrows span {
+    cursor: pointer;    
+    margin: 0 3px 0 3px
+}
+
+.BTT-ajax-table-curpage-and-arrows span:hover 
+{
+    text-decoration: underline;
+    color: #395475;
+}
+
+.BTT-ajax-grid-row-image {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 1px;
+    cursor: pointer;
+}
+
+.BTT-ajax-grid-row-image:hover {
+    width: 26px;
+    height: 26px; 
+    margin-bottom: 0px;
+}

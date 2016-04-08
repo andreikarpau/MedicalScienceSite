@@ -1,0 +1,28 @@
+﻿@using BTTechnologies.MedScience.MVC.BTTClasses
+@model BTTechnologies.MedScience.MVC.Models.SiteFilesModel
+
+@{
+    ViewBag.Title = MedSiteStrings.SiteFiles;
+}
+
+<hgroup class="title">
+    <h1>@MedSiteStrings.SiteFiles</h1>
+    @Html.Partial("_OkErrorHeaderPartial", Model)
+</hgroup>
+
+<span>
+    @using (Html.BeginForm("AddSiteFiles", "Documents", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.Partial("_BTTAjaxFilesUploader", new BTTAjaxFilesUploaderModel(Url.Action("AddFileToTempFolder")) { UploadText = MedSiteStrings.Upload, UploadErrorText = MedSiteStrings.UnknownErrorOccured })
+        <input type="submit" value="@MedSiteStrings.Save" />
+    }
+</span>    
+
+@Html.Partial("_BTTAjaxGrid", Model)
+
+@section scripts {
+    @Scripts.Render("~/bundles/BTTAjaxGrid")
+    <script type="text/javascript">GetGridData("@Model.TableName");</script>
+    
+    @Scripts.Render("~/bundles/BTTAjaxFileUploader")
+}

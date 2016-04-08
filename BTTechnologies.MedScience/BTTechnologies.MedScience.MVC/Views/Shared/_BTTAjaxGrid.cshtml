@@ -1,0 +1,70 @@
+﻿@using BTTechnologies.MedScience.MVC.BTTClasses
+@model BTTAjaxGridModel
+@{
+    int index = 0;
+    string inputId = Model.TableName + "CurPageInput";
+    string editColumnId = Model.TableName + "EditColumn";
+    string deleteColumnId = Model.TableName + "DeleteColumn";
+    string deleteUrlId = Model.TableName + "DeleteUrl";
+    string editUrlId = Model.TableName + "EditUrl";
+}
+<div id="@Model.TableName" urlvalue="@Model.DataActionUrl" totalrowscount="1" class="BTT-ajax-table-container">
+    <span id="@deleteUrlId" class="hidden-item" confirmtext="@Model.DeleteConfirmationText">@Model.DeleteRowUrl</span>
+    <span id="@editUrlId" class="hidden-item">@Model.EditRowUrl</span>
+    <table  class="BTT-ajax-table">
+        @foreach (BTTGridColumn column in Model.Columns)
+        {
+            {
+                string additionalClasses = column.IsSortable ? "BTT-ajax-sortable-header" : string.Empty;
+                string columnId = Model.TableName + column.ColumnIdentifier;
+                string clickHandler = column.IsSortable ? ("orderByColumn('" + columnId + "', '" + Model.TableName + "')") : string.Empty;
+                if (column.IsKey)
+                {
+                    additionalClasses += " key-column";
+                }
+
+                if (column.IsHidden)
+                {
+                    additionalClasses += " hidden-column";
+                }
+            
+                <th id="@columnId" columnid="@column.ColumnIdentifier" class="BTT-ajax-table-header @additionalClasses" onclick="@clickHandler">
+                    <table>
+                        <tr>
+                            <td>
+                                @column.DisplayName  
+                            </td>
+                            <td>
+                                <img src="../Home/../../Content/../Images/arrow-sort-up.png" style="display: none" columnid="@column.ColumnIdentifier" sortindicator="up"/>
+                                <img src="../Home/../../Content/../Images/arrow-sort-down.png" style="display: none" columnid="@column.ColumnIdentifier" sortindicator="down"/>
+                            </td>
+                        </tr>
+                    </table>
+                </th>
+            }
+        }
+
+        @if (Model.AddEditColumn)
+        {<th id="@editColumnId" class="BTT-ajax-table-header BTT-ajax-icon-column" tooltip="@Model.EditTooltipText"></th>}
+                     
+        @if (Model.AddDeleteColumn)
+        {<th id="@deleteColumnId" class="BTT-ajax-table-header BTT-ajax-icon-column" tooltip="@Model.DeleteTooltipText"></th>}
+    </table>
+    <div class="BTT-ajax-table-footer">
+        <span class="BTT-ajax-table-curpage-and-arrows">
+            <span onclick="setInputValue('@inputId', '@Model.TableName', '1')"><<</span>
+            <span onclick="increaseOrDecreaseInputValue('@inputId', '@Model.TableName', false)"><</span>
+            <input id="@inputId" maxlength="4" size="4" value="1" onchange="inputValueChanged('@inputId', '@Model.TableName')"/>
+            <span onclick="increaseOrDecreaseInputValue('@inputId', '@Model.TableName', true)">></span>
+            <span onclick="setInputMaxValue('@inputId', '@Model.TableName')">>></span>
+        </span>
+
+        @foreach (int count in Model.RowsPerPage.OrderByDescending(c => c))
+        {
+            string id = @Model.TableName + "Count" + @index;
+            index++;
+            string classes = "BTT-ajax-table-perPage-button" + (index == Model.RowsPerPage.Count() ? " BTT-ajax-table-selected-item" : string.Empty);
+            <span id="@id" class="@classes" onclick="countPerPageSelectionChanged('@id', '@Model.TableName', '@inputId')">@count.ToString()</span>    
+        }
+    </div>
+</div>

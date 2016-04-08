@@ -1,0 +1,124 @@
+﻿@using BTTechnologies.MedScience.MVC.BTTClasses
+@using BTTechnologies.MedScience.MVC.Infrastructure.Security
+@using BTTechnologies.MedScience.MVC.Models
+@model ManageArticleModel
+    
+@{
+    ViewBag.Title = MedSiteStrings.ArticleEditing;
+    bool canPublishArticles = ServicesHelper.GetMembershipService().UserHasPrivilege(HttpContext.Current.User.Identity.Name, Privilege.CanPublishArticle);
+}
+
+@if (Model.Id > 0)
+{
+    <a href="@Url.Action("ShowArticleView", "ReadArticles", new { id = Model.Id })">@MedSiteStrings.GoToArticle</a>
+}
+
+<hgroup class="title">
+    <h1>@MedSiteStrings.ArticleEditing</h1>
+    @Html.Partial("_OkErrorHeaderPartial", Model)
+</hgroup>
+
+<section id="centeredForm">
+    @using (Html.BeginForm("ManageArticle", "Documents", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>@MedSiteStrings.ArticleEditing</legend>
+            <input type="hidden" name="Id" id="Id" value="@Model.Id" />
+
+            <ol>
+                <li>
+                    @Html.LabelFor(m => m.DisplayName)
+                    @Html.ValidationMessageFor(m => m.DisplayName)
+                    @Html.TextBoxFor(m => m.DisplayName)
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.DocumentDescription)
+                    @Html.ValidationMessageFor(m => m.DocumentDescription)
+                    @Html.TextAreaFor(m => m.DocumentDescription)
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.Published)
+                    
+                    @if (canPublishArticles)
+                    {
+                        @Html.CheckBoxFor(m => m.Published)
+                    }
+                    else
+                    {
+                        <input type="checkbox" readonly="readonly" name="Published" id="Published" disabled="disabled" class="readonly" value="@Model.Published" />
+                    }
+                </li>
+                <li>
+                    <label for="file1">@MedSiteStrings.AttachFileToArticle</label>
+                    @Html.Partial("_BTTAjaxFilesUploader", new BTTAjaxFilesUploaderModel(Url.Action("AddFileToTempFolder")) { UploadText = MedSiteStrings.Upload, UploadErrorText = MedSiteStrings.UnknownErrorOccured })
+                </li>
+                <li>
+                    <ol id="DocumentsList">
+                        @foreach (ArticleAttachmentModel attachment in Model.ArticleAttachments)
+                        {
+                            <li documentid="@attachment.Id">
+                                <a href="@Url.Content(attachment.FileUrl)">@attachment.FileName</a>
+                                <img class="deleteImg" src="../Home/../../Content/../Images/delete-button-red.png" onclick="DeleteDocument('@attachment.Id')" alt="Delete"/>
+                                <input type="hidden" name="DocumentsIds" id="@("document" + attachment.Id)" value="@attachment.Id" />
+                            </li>
+                        }
+                    </ol>
+                </li>
+                <li id="authorsLi">
+                    <label>@MedSiteStrings.ArticleAuthors</label>
+                    @Html.Partial("_QuickSearchString", Model.AuthorQuickSearchData)
+                    <ol id="AuthorsList" class="littleBiggerFont" fullnameurl="@Url.Action("GetAuthorFullNameById")">
+                        @foreach (ArticleAuthorModel authorModel in Model.ArticleAuthors)
+                        {
+                            <li authorid="@authorModel.Id">
+                                <a href="@Url.Action("EditAuthorByUser", "Author", new { id = authorModel.Id })">@authorModel.FullName</a>
+                                <img class="deleteImg" src="../Home/../../Content/../Images/delete-button-red.png" onclick="DeleteAuthor('@authorModel.Id')" alt="Delete"/>
+                                <input type="hidden" name="AuthorsIds" id="@("author" + authorModel.Id)" value="@authorModel.Id" />
+                            </li>
+                        }
+                    </ol>
+                </li>
+                <li id="categoriesLi">
+                    <label>@MedSiteStrings.ArticleCategories</label>
+                    @Html.Partial("_QuickSearchString", Model.CategoryQuickSearchData)
+
+                    <ol id="CategoriesList" class="littleBiggerFont" fullnameurl="@Url.Action("GetCategoryFullNameById")">
+                        @foreach (ArticleCategoryModel category in Model.ArticleCategories)
+                        {
+                            <li categoryid="@category.Id">
+                                <span>@category.DisplayName</span>
+                                <img class="deleteImg" src="../Home/../../Content/../Images/delete-button-red.png" onclick="DeleteCategory('@category.Id')" alt="Delete"/>
+                                <input type="hidden" name="CategoriesIds" id="@("category" + category.Id)" value="@category.Id" />
+                            </li>
+                        }
+                    </ol>
+                </li>
+                <li>
+                    <textarea class="ckeditor" name="Content" id="Content">@Model.Content</textarea>        
+                </li>
+                <li>
+                    @if (new DateTime() < Model.LastChangedDate)
+                    {
+                        @Html.LabelFor(m => m.LastChangedDate)
+                        <input type="text" readonly="readonly" name="LastChangedDate" id="LastChangedDate" disabled="disabled" class="readonly" value="@Model.LastChangedDate" />
+                    }
+                </li>
+            </ol>
+
+            <input type="submit" value="@MedSiteStrings.Save" />
+        </fieldset>
+    }
+</section>
+
+@Html.Partial("_QuickAddAuthorDialog")
+@Html.Partial("_QuickAddCategoryDialog")
+
+@section scripts {
+    <script src="/RichTextEditor/ckeditor.js"></script>
+    @Scripts.Render("~/bundles/ManageArticleScripts")
+    @Scripts.Render("~/bundles/QuickSearchString")
+    @Scripts.Render("~/bundles/BTTAjaxFileUploader")
+}

@@ -1,0 +1,18 @@
+﻿@model BTTechnologies.MedScience.MVC.Models.AllUsersGridModel
+@{
+    ViewBag.Title = MedSiteStrings.AllUsersTitle;
+}
+
+<hgroup class="title">
+    <h1>@MedSiteStrings.AllUsersTitle</h1>
+</hgroup>
+
+@Html.Partial("_BTTAjaxGrid", Model)
+
+@section scripts {
+    @Scripts.Render("~/bundles/BTTAjaxGrid")
+    
+    <script type="text/javascript">
+        GetGridData("@Model.TableName");
+    </script>
+}

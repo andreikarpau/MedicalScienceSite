@@ -1,0 +1,18 @@
+﻿<div id="QuickAddCategoryBox" class="edit-form-fields" style="display: none" title="@MedSiteStrings.AddNewCategory" quickcategoryaddurl="@Url.Action("QuickAddCategory", "Documents")">
+    <ol>
+        <li>
+            <span id="CategoryDialogErrors" class="field-validation-valid field-validation-error"></span>
+        </li>
+        <li>
+            <label for="CategoryTitle">@MedSiteStrings.Title</label>
+            <span id="CategoryTitleValidation" class="field-validation-valid field-validation-error">@MedSiteStrings.FieldShouldBeFilled</span>
+            <input id="CategoryTitle" name="CategoryTitle" type="text" value="">
+        </li>
+        <li>
+            <label for="CategoryDescription">@MedSiteStrings.Description</label>
+            <input id="CategoryDescription" name="CategoryDescription" type="text" value="">
+        </li>
+    </ol>
+    
+    <span><button onclick="ValidateAndAddNewCategoryData()">@MedSiteStrings.Save</button></span>
+</div>

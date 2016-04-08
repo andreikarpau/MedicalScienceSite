@@ -1,0 +1,6 @@
+﻿@model BTTechnologies.MedScience.MVC.Models.ArticleInfo
+
+@Html.ActionLink(Model.DisplayName, "ShowArticleView", new {id = Model.Id})
+<div class="all-articles-small-description">@Model.DocumentDescription</div>
+<div class="all-articles-small-description">@Model.AuthorsNames</div>
+<div class="all-articles-very-small-description">@Model.LastChangedDate.ToString("d MMMM yyyy")</div>

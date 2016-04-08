@@ -1,0 +1,56 @@
+﻿@using BTTechnologies.MedScience.MVC.Models
+@model ManageUserDataModel
+@{
+    ViewBag.Title = MedSiteStrings.UsersDataTitle;
+}
+
+<hgroup class="title">
+    <h1>@MedSiteStrings.UsersDataTitle</h1>
+</hgroup>
+
+<section id="centeredForm">
+    <div class="edit-form-fields">
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.Id) 
+                <div>@Html.TextBoxFor(m => m.Id, new { @class = "readonly", @readonly = "readonly", disabled = "disabled" })</div>
+            </li>
+            <li>
+                @Html.LabelFor(m => m.UserLogin) 
+                <div>@Html.TextBoxFor(m => m.UserLogin, new { @class = "readonly", @readonly = "readonly", disabled = "disabled" })</div>
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Name) 
+                <div>@Html.TextBoxFor(m => m.Name, new { @class = "readonly", @readonly = "readonly", disabled = "disabled" })</div>
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Patronymic) 
+                <div>@Html.TextBoxFor(m => m.Patronymic, new { @class = "readonly", @readonly = "readonly", disabled = "disabled" })</div>
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Surname) 
+                <div>@Html.TextBoxFor(m => m.Surname, new { @class = "readonly", @readonly = "readonly", disabled = "disabled" })</div>
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Phone) 
+                <div>@Html.TextBoxFor(m => m.Phone, new { @class = "readonly", @readonly = "readonly", disabled = "disabled" })</div>
+            </li>
+            <li>
+                @Html.LabelFor(m => m.RegistrationDate) 
+                <div>@Html.TextBoxFor(m => m.RegistrationDate, new { @class = "readonly", @readonly = "readonly", disabled = "disabled" })</div>
+            </li>
+            <li>
+                @Html.LabelFor(m => m.LastLogInDate) 
+                <div>@Html.TextBoxFor(m => m.LastLogInDate, new { @class = "readonly", @readonly = "readonly", disabled = "disabled" })</div>
+            </li>
+            <li>
+                @Html.Partial("_ManageUserPermissions", @Model)
+            </li>
+        </ol>
+    </div>
+</section>
+
+@section scripts {
+    @Scripts.Render("~/bundles/DropDown")
+    @Scripts.Render("~/bundles/ManageUserPermissions")
+}

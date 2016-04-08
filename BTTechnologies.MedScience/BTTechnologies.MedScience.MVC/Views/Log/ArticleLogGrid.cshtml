@@ -1,0 +1,19 @@
+﻿@model BTTechnologies.MedScience.MVC.BTTClasses.BTTAjaxGridModel
+
+@{
+    ViewBag.Title = MedSiteStrings.ArticlesLogGridTitle;
+}
+
+<hgroup class="title">
+    <h1>@MedSiteStrings.ArticlesLogGridTitle</h1>
+</hgroup>
+
+@Html.Partial("_BTTAjaxGrid", Model)
+
+@section scripts {
+    @Scripts.Render("~/bundles/BTTAjaxGrid")
+    
+    <script type="text/javascript">
+        GetGridData("@Model.TableName");
+    </script>
+}

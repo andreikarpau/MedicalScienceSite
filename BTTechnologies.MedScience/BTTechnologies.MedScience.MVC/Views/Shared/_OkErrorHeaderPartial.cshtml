@@ -1,0 +1,13 @@
+﻿@model BTTechnologies.MedScience.MVC.Models.IOkErrorModel
+
+<span class="error-success-group">
+    @switch (Model.OperationSucceed)
+    {
+        case true:
+            <h2 class="okColor">@MedSiteStrings.DataIsSavedWithSuccess</h2>
+            break;
+        case false:
+        <h2 class="errorColor">@MedSiteStrings.ErrorsFoundWhenSavingData</h2>
+            break;
+    }
+</span>

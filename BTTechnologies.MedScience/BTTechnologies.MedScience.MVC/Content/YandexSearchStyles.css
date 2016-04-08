@@ -1,0 +1,222 @@
+﻿    .ya-page_js_yes .ya-site-form_inited_no {
+        display: none;
+    }
+
+#ya-site-form0 .ya-site-form__submit_type_image {
+    background: url("../Images/search-lens-icon.png") no-repeat center !important;
+    -ms-background-size: cover !important;
+    background-size: cover !important;
+    background-color: #ffffff !important;
+    width: 20px !important;
+    min-height: 20px;
+    height: 100% !important;
+    border: 1px solid #818181 !important;
+    margin-left: 0px !important;
+}
+
+    #ya-site-results {
+        color: #333333;
+        background: #FFFFFF;
+    }
+
+
+        #ya-site-results .b-pager__current,
+        #ya-site-results .b-serp-item__number {
+            color: #333333 !important;
+        }
+
+
+
+    #ya-site-results {
+        font-family: Verdana !important;
+    }
+
+
+        #ya-site-results :visited,
+        #ya-site-results .b-pager :visited,
+        #ya-site-results .b-pager :visited,
+        #ya-site-results .b-foot__link:visited,
+        #ya-site-results .b-copyright__link:visited {
+            color: #800080;
+        }
+
+        #ya-site-results a:link,
+        #ya-site-results a:active,
+        #ya-site-results .b-pseudo-link,
+        #ya-site-results .b-head-tabs__link,
+        #ya-site-results .b-head-tabs__link:link,
+        #ya-site-results .b-head-tabs__link:visited,
+        #ya-site-results .b-dropdown__list .b-pseudo-link,
+        #ya-site-results .b-dropdowna__switcher .b-pseudo-link,
+        #ya-site-results .b-popupa .b-popupa__content .b-menu__item,
+        #ya-site-results .b-foot__link:link,
+        #ya-site-results .b-copyright__link:link,
+        #ya-site-results .b-serp-item__mime,
+        #ya-site-results .b-pager :link {
+            color: #405874;
+        }
+
+        #ya-site-results :link:hover,
+        #ya-site-results :visited:hover,
+        #ya-site-results span.b-pseudo-link:hover {
+            color: #FF0000 !important;
+        }
+
+
+        #ya-site-results .l-page,
+        #ya-site-results .b-bottom-wizard {
+            font-size: 13px;
+        }
+
+        #ya-site-results .b-pager {
+            font-size: 1.25em;
+        }
+
+
+        #ya-site-results .b-serp-item__text,
+        #ya-site-results .ad {
+            font-style: normal;
+            font-weight: normal;
+        }
+
+
+            #ya-site-results .b-serp-item__title-link,
+            #ya-site-results .ad .ad-link {
+                font-style: normal;
+                font-weight: normal;
+            }
+
+                #ya-site-results .ad .ad-link a {
+                    font-weight: bold;
+                }
+
+
+            #ya-site-results .b-serp-item__title,
+            #ya-site-results .ad .ad-link {
+                font-size: 16px;
+            }
+
+        #ya-site-results .b-serp-item__title-link:link,
+        #ya-site-results .b-serp-item__title-link {
+            font-size: 1em;
+        }
+
+        #ya-site-results .b-serp-item__number {
+            font-size: 13px;
+        }
+
+        #ya-site-results .ad .ad-link a {
+            font-size: 0.88em;
+        }
+
+
+        #ya-site-results .b-serp-url,
+        #ya-site-results .b-direct .url,
+        #ya-site-results .b-direct .url a:link,
+        #ya-site-results .b-direct .url a:visited {
+            font-size: 13px;
+            font-style: normal;
+            font-weigth: normal;
+            color: #A7ACB0;
+        }
+
+
+        #ya-site-results .b-serp-item__links-link {
+            font-size: 13px;
+            font-style: normal;
+            font-weight: normal;
+            color: #405874 !important;
+        }
+
+
+        #ya-site-results .b-pager__inactive,
+        #ya-site-results .b-serp-item__from,
+        #ya-site-results .b-direct__head-link,
+        #ya-site-results .b-image__title,
+        #ya-site-results .b-video__title {
+            color: #000000 !important;
+        }
+
+
+        #ya-site-results .b-pager__current,
+        #ya-site-results .b-pager__select {
+            background: #E0E0E0;
+        }
+
+
+        #ya-site-results .b-foot,
+        #ya-site-results .b-line {
+            border-top-color: #E0E0E0;
+        }
+
+
+
+        #ya-site-results .b-dropdown__popup .b-dropdown__list,
+        #ya-site-results .b-popupa .b-popupa__content {
+            background-color: #FFFFFF;
+        }
+
+
+        #ya-site-results .b-popupa .b-popupa__tail {
+            border-color: #E0E0E0 transparent;
+        }
+
+        #ya-site-results .b-popupa .b-popupa__tail-i {
+            border-color: #FFFFFF transparent;
+        }
+
+        #ya-site-results .b-popupa_direction_left.b-popupa_theme_ffffff .b-popupa__tail-i,
+        #ya-site-results .b-popupa_direction_right.b-popupa_theme_ffffff .b-popupa__tail-i {
+            border-color: transparent #FFFFFF;
+        }
+
+
+        #ya-site-results .b-dropdowna__popup .b-menu_preset_vmenu .b-menu__separator {
+            border-color: #E0E0E0;
+        }
+
+
+        #ya-site-results .b-specification-list,
+        #ya-site-results .b-specification-list .b-pseudo-link,
+        #ya-site-results .b-specification-item__content label,
+        #ya-site-results .b-specification-item__content .b-link,
+        #ya-site-results .b-specification-list .b-specification-list__reset .b-link {
+            color: #333333 !important;
+            font-family: Verdana;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: normal;
+        }
+
+
+        #ya-site-results .b-calendar__title {
+            font-family: Verdana;
+            color: #333333;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 13;
+        }
+
+        #ya-site-results .b-calendar-month__day_now_yes {
+            color: #E0E0E0;
+        }
+
+        #ya-site-results .b-calendar .b-pseudo-link {
+            color: #333333;
+        }
+
+
+
+        #ya-site-results .b-popupa .b-popupa__tail-i {
+            background: #FFFFFF;
+            border-color: #E0E0E0 !important;
+        }
+
+        .ya-site-form__search-input {
+            padding: 2px !important;
+        }
+
+        div.ya-site-form__form input[type='button'] {
+            margin-left: 2px !important;
+            width: 80px !important;
+        }

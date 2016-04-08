@@ -1,0 +1,44 @@
+﻿@using BTTechnologies.MedScience.MVC.ControllersServices.Abstract
+@using BTTechnologies.MedScience.MVC.Helpers
+@using BTTechnologies.MedScience.MVC.Infrastructure.Security
+@using BTTechnologies.MedScience.MVC.Models
+
+@model SelectedUserPermissions
+@{
+    IMembershipService service = ServicesHelper.GetMembershipService();
+    bool canEdit = service.UserHasPrivilege(User.Identity.Name, Privilege.ManageAccountPermissionsPrivilege);
+    bool canManageAdmin = service.UserHasPrivilege(User.Identity.Name, Privilege.ManageAdminPermissionsPrivilege);
+
+    if (canEdit && !canManageAdmin && service.UserIsAdmin(Model.Id, false))
+    {canEdit = false;}
+
+    if (canEdit && Model.Id == service.GetActiveAccount(HttpContext.Current.User.Identity.Name).Id)
+     {canEdit = false;}   
+    
+    string canEditStr = canEdit ? bool.TrueString : bool.FalseString;
+}
+
+<div id="DropDownWithFieldDiv" userid="@Model.Id" refreshurl="@Model.RefreshUrl" addurl="@Model.AddPermissionUrl" deleteurl="@Model.DeletePermissionUrl" canedit="@canEditStr">
+    <label for="UserRoles">@MedSiteStrings.UserRoles</label>
+    <table class="styledTable">
+        @if (canEdit)
+        {
+            <tr>
+                <td>
+                    <ul class="dropdown">
+                        <li>
+                            <div href="#">@MedSiteStrings.AddRole</div>
+                            <ul class="sub_menu"></ul>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        }
+        <tr>
+            <td>
+                <div id="UserRoles">
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

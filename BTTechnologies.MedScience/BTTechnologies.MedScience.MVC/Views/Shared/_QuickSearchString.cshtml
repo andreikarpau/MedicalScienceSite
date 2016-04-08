@@ -1,0 +1,16 @@
+﻿@model BTTechnologies.MedScience.MVC.QuickSearchString.QuickSearchStringModel
+@{
+    Guid guid = Guid.NewGuid();
+    string stringId = "QuickSearchString" + guid;
+    string inputId = "QuickSearchInput" + guid;
+}
+
+<div id="@stringId" class="btt-quick-search-string" getdataurl="@Model.SearchMethodUrl" nothingfound="@Model.NothingFoundString" inittext="@Model.QuickSearchInitString" nothingfoundclickable="@Model.NothingFoundIsClickable.ToString().ToLower()" wassent="false" oldvalue="">  
+    <input type="text" class="italic-gray-text" id="@inputId" value="@Model.QuickSearchInitString"/>
+    <div style="display: none;" class="btt-quick-search-string-div">
+        <ol>
+            <li>
+            </li>
+        </ol>
+    </div>
+</div>

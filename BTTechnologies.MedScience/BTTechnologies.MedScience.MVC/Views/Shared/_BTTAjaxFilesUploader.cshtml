@@ -1,0 +1,17 @@
+﻿@model BTTechnologies.MedScience.MVC.BTTClasses.BTTAjaxFilesUploaderModel
+
+<span id="BTTAjaxFilesUploaderContainer" uploadurl="@Model.UploadUrl">
+    <input type="file" name="BTTFileUpload" id="BTTFileUpload" multiple />
+    <button type="button" name="BTTFileUploadSubmit" id="BTTFileUploadSubmit" disabled="disabled">@Model.UploadText</button>
+
+    <div class="message-error">
+        @Model.UploadErrorText
+    </div>
+
+    <div class="progress-bar">
+        <div class="percentage-element"></div>
+    </div>
+
+    <span id="BTTUploaderNewFilesInputs">
+    </span>
+</span>

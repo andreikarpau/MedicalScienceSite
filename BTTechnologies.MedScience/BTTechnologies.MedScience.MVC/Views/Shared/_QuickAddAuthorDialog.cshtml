@@ -1,0 +1,28 @@
+﻿<div id="QuickAddAuthorBox" class="edit-form-fields" style="display: none" title="@MedSiteStrings.AddNewAuthor" quickauthoraddurl="@Url.Action("QuickAddAuthor", "Author")">
+    <ol>
+        <li>
+            <span id="AuthorDialogErrors" class="field-validation-valid field-validation-error"></span>
+        </li>
+        <li>
+            <label for="AuthorSurname">@MedSiteStrings.Surname</label>
+            <span id="AuthorSurnameValidation" class="field-validation-valid field-validation-error">@MedSiteStrings.FieldShouldBeFilled</span>
+            <input id="AuthorSurname" name="AuthorSurname" type="text" value="">
+        </li>
+        <li>
+            <label for="AuthorName">@MedSiteStrings.Name</label>
+            <span id="AuthorNameValidation" class="field-validation-valid field-validation-error">@MedSiteStrings.FieldShouldBeFilled</span>
+            <input id="AuthorName" name="AuthorName" type="text" value="">
+        </li>
+        <li>
+            <label for="AuthorPatronymic">@MedSiteStrings.Patronymic</label>
+            <input id="AuthorPatronymic" name="AuthorPatronymic" type="text" value="">    
+        </li>
+        <li>
+            <label for="AuthorDegree">@MedSiteStrings.AuthorDegree</label>
+            <textarea cols="20" id="AuthorDegree" name="AuthorDegree" rows="2"></textarea>
+        </li>
+    </ol>
+    
+    <span><button onclick="ValidateAndAddNewAuthorData()">@MedSiteStrings.Save</button></span>
+</div>
+

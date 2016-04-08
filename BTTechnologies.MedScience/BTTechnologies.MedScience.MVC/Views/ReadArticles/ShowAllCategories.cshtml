@@ -1,0 +1,24 @@
+﻿@using BTTechnologies.MedScience.MVC.Models
+@model AllCategoriesModel
+
+@{
+    ViewBag.Title = MedSiteStrings.AllCategories;
+}
+
+@if (!Model.AllCategories.Any())
+{
+    <div class="centered-note middle-big-text">@MedSiteStrings.NoCategoriesFound</div>    
+}
+else
+{
+    <ul id="AllArticlesUl">
+        @foreach (ArticleCategoryInfoModel category in Model.AllCategories.OrderBy(c => c.DisplayName))
+        {
+            <li>
+                @Html.ActionLink(category.DisplayName, "ShowCategoryArticles", new { id = category.CategoryId })
+                <div class="all-articles-small-description">@category.Description</div>
+                <div class="all-articles-very-small-description">@string.Format(MedSiteStrings.CategoryHasNArticles, category.CategoryArticlesCount)</div>
+            </li>
+        }    
+    </ul>
+}

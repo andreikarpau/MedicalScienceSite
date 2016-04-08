@@ -1,0 +1,13 @@
+﻿<div id="QuickSearchPanel" quicksearchurl="@Url.Action("SiteQuickSearch", "ReadArticles")" itemscount="0" currentPage="0">
+    <div id="QuickSearchPanelTitleDiv"><span id="QuickSearchPanelTitleSpan">@MedSiteStrings.QuickSearchPanelTitle</span>  <span id="QuickSearchPanelResultsSpan">@MedSiteStrings.NothingFound<span id="ResultsNumSpan"></span></span><img id="QuickSearchPanelInProgressImg" src="../../Images/loadingBlueBar.gif" /></div>
+    <div id="QuickSearchResultsTopDiv">
+        <span id="QuickSearchPanelResultsListContainerSpan">
+            <ul id="QuickSearchPanelResultsList">
+                <li></li>
+            </ul>
+            <div>
+                <span class="a-span" onclick="ShowPrevPage()" id="QuickSearchPanelPrevButton">@MedSiteStrings.PreviousAbbrWithArrow</span><span id="QuickSearchPanelNextButton" class="a-span" onclick="ShowNextPage()">@MedSiteStrings.NextAbbrWithArrow</span>
+            </div>
+        </span>
+    </div>
+</div>

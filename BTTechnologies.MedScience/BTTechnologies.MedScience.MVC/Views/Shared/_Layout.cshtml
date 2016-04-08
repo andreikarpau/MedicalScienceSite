@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+
+        @if (IsSectionDefined("LastModifiedMeta")) { @RenderSection("LastModifiedMeta")}
+        else { @Html.GetLastModifiedMeta(new DateTime(2013, 12, 26, 12, 26, 1)) }
+
+        @if (IsSectionDefined("TitleMeta")) { @RenderSection("TitleMeta") }
+        else { @Html.GetTitleMeta(MedSiteStrings.MainPageTitle) }
+
+        @if (IsSectionDefined("DescriptionMeta")) { @RenderSection("DescriptionMeta") }
+        else { @Html.GetDescriptionMeta(MedSiteStrings.MainPageDescription) }
+
+        @if (IsSectionDefined("KeyWordsMeta")) { @RenderSection("KeyWordsMeta") }
+        else { @Html.GetKeyWordsMeta(MedSiteStrings.MainPageKeyWords) }
+
+        @RenderSection("headSection", false)
+        <title>@ViewBag.Title</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link rel="image_src" href="http://medicinescience.ru/Images/logos/logoWithText.png" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @Styles.Render("~/Content/themes/base/css")  
+        @Styles.Render("~/Content/siteSearchCss")         
+    </head>
+    <body>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
+
+        <div id="headerAndContentContainer">
+            <header>
+                <div class="content-wrapper">
+                    <table>
+                        <tr>
+                            <td rowspan="3">
+                                <div id="siteTitleImage">
+                                    <a href="@Url.Action("Index", "Home")"></a>
+                                </div>
+                            </td>
+
+                            <td>
+                                <section id="login">
+                                    @Html.Partial("_LoginPartial")
+                                </section>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <nav>
+                                    <ul id="menu" class="blue-font">
+                                        <li>@Html.ActionLink(@MedSiteStrings.MainPageMenuItemAndTitle, "Index", "Home")</li>
+                                        <li>@Html.ActionLink(@MedSiteStrings.ArticlesCatalog, "ShowAllArticlesList", "ReadArticles")</li>
+                                        <li>@Html.ActionLink(@MedSiteStrings.AllCategories, "ShowAllCategories", "ReadArticles")</li>
+                                        <li class="nullRightPaddingMargin">@Html.ActionLink(@MedSiteStrings.AboutMenuItemAndPageTitle, "About", "Home")</li>
+                                    </ul>
+                                </nav>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="adminMenuWrapper">
+                                    <div>
+                                        @Html.Partial("_AdminMenu")
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </header>
+            <div id="searchLine">
+                <div id="searchLineInsideContainer">
+                    <div class="content-wrapper" id="IndexPageContainer">
+                        @Html.Partial("_YandexSearch")
+                    </div>
+                </div>
+            </div>
+            
+            <div id="mainContentContainer">
+                <section class="content-wrapper">
+                    <div class="@(HTMLHelper.ShowMainContentContainerStyle ? "content-border content-padding" : string.Empty)">
+                        @RenderBody()
+                    </div>
+                </section>
+            </div>
+        </div>
+        <footer>
+            <div>
+                <table>
+                    <tr>
+                        <td id="FooterArea1">
+                            <div>
+                                @Html.Partial("_SiteMetrics")
+                            </div>
+                        </td>
+                        <td id="FooterArea2">
+                            <div><strong>@Html.ActionLink(@MedSiteStrings.MainPageMenuItemAndTitle, "Index", "Home")</strong></div>
+                            <div><strong>@Html.ActionLink(@MedSiteStrings.ArticlesCatalog, "ShowAllArticlesList", "ReadArticles")</strong></div>
+                            <div><strong>@Html.ActionLink(@MedSiteStrings.AllCategories, "ShowAllCategories", "ReadArticles")</strong></div>
+                            <div><strong>@Html.ActionLink(@MedSiteStrings.AboutMenuItemAndPageTitle, "About", "Home")</strong></div>                
+                        </td>
+                        <td id="FooterArea3">
+                            <div><strong>@string.Format(MedSiteStrings.ColonWithSpaceAfter, MedSiteStrings.Email, string.Empty)</strong><a href="mailto:admin@medicinescience.ru">admin@medicinescience.ru</a></div>
+                            <div><strong>@string.Format(MedSiteStrings.ColonWithSpaceAfter, MedSiteStrings.Support, string.Empty)</strong><a href="mailto:support@medicinescience.ru">support@medicinescience.ru</a></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>      
+            <div>
+                <div>
+                    <p>&copy; Copyright 2013 Medicine Science</p>
+                </div>
+            </div>          
+        </footer>
+
+        @Scripts.Render("~/bundles/DrowdownMenu")
+        @RenderSection("scripts", false)
+    </body>
+</html>

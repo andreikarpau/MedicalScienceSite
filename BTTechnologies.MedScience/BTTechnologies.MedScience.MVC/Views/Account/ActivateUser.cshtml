@@ -1,0 +1,67 @@
+﻿@model BTTechnologies.MedScience.MVC.Models.ActivateAccountModel
+
+@{
+    ViewBag.Title = MedSiteStrings.AccountActivationTitle;
+}
+
+<hgroup class="title">
+    <h1>@MedSiteStrings.AccountActivationTitle</h1>
+</hgroup>
+<section id="centeredForm">
+    
+    @if (Model.Verified)
+    {
+        <p class="big-text okColor">@MedSiteStrings.AccountSuccessfullyActivate</p>
+    }
+    else
+    {
+        using (Html.BeginForm())
+        {
+            <p>@string.Format(MedSiteStrings.ActivationCodeWasSent, Model.Email)</p>
+
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <ol>
+                    <li>
+                        @Html.LabelFor(m => m.VerificationCode)
+                        @Html.ValidationMessageFor(m => m.VerificationCode)
+                        @Html.TextBoxFor(m => m.VerificationCode)
+                        @Html.HiddenFor(m => m.Email)
+                    </li>
+                </ol>
+                <input type="submit" value="@MedSiteStrings.ActivateAccount" />
+            </fieldset>
+        }
+        <div class="buttonContainer"><button type="button" id="resendButton" onclick=" ResendEmail() ">@MedSiteStrings.SendAgain</button></div>
+        <div class="buttonContainer"><button type="button" onclick=" GoToChangeEmail() ">@MedSiteStrings.ChangeEmail</button></div>
+        <img id="loadingIcon" src="../Home/../../Content/../Images/loadingBar.gif" alt="@MedSiteStrings.Loading"/>
+    }
+</section>
+
+@section scripts {
+    <script type="text/javascript">
+        function GoToChangeEmail() {
+            window.location.replace('@Url.Action("ChangeLogin")');
+        }
+
+        function ResendEmail() {
+            $('#resendButton').hide();
+            $('#loadingIcon').show();
+            $.ajax({
+                dataType: 'html',
+                cache: false,
+                type: 'POST',
+                data: { email: '@Model.Email' },
+                url: '@Url.Action("SendActivationEmail", "Account")',
+                success: function () {
+                    $('#resendButton').show();
+                    $('#loadingIcon').hide();
+                }
+            });
+        }
+
+        $('#loadingIcon').hide();
+    </script>
+}

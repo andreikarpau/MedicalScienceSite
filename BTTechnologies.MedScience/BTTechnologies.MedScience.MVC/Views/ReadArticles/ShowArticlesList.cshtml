@@ -1,0 +1,35 @@
+﻿@using BTTechnologies.MedScience.MVC.Models
+@model ArticlesListModel
+
+@{
+    ViewBag.Title = Model.HeaderText;
+}
+
+<hgroup class="title">
+    <h3 class="left-text">@Model.HeaderText</h3>
+
+    @if (!string.IsNullOrEmpty(Model.DescriptionText))
+{
+    <div class="left-text all-articles-small-description">@Model.DescriptionText</div>
+}
+</hgroup>
+
+<hr/>
+
+<div class="centered-note middle-big-text"></div>    
+
+@if (!Model.ArticlesInfos.Any())
+{
+    <div class="centered-note middle-big-text">@MedSiteStrings.NoArticleFound</div>    
+}
+else
+{
+    <ul id="AllArticlesUl">
+        @foreach (ArticleInfo article in Model.ArticlesInfos)
+        {
+            <li>
+                @Html.Partial("_ArticleInfoView", article)
+            </li>
+        }    
+    </ul>
+}

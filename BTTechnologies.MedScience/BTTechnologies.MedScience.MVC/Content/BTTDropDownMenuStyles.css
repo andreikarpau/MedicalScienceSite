@@ -1,0 +1,22 @@
+﻿.BTT-dropdown-menu > ul {
+    z-index: 10;
+    position: absolute;
+    padding-left: 15px;
+    display: none;
+    background-color: #efeeef;
+    border: 1px solid #787878;
+
+    -moz-box-shadow: 0 0 3px rgba(0,0,0,.35);
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,.35);
+    box-shadow: 0 0 3px rgba(0,0,0,.35);
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.BTT-dropdown-menu > ul > li{
+    display: block;
+    padding: 2px 20px 2px 0px;
+    text-align: left;
+}

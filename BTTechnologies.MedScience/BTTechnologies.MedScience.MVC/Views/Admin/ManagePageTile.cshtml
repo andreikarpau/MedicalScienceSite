@@ -1,0 +1,57 @@
+﻿@using BTTechnologies.MedScience.Domain.Entities
+@model BTTechnologies.MedScience.MVC.Models.ManagePageTileModel
+
+@{
+    ViewBag.Title = MedSiteStrings.TileEdit;
+}
+
+<hgroup class="title">
+    <h1>@MedSiteStrings.TileEdit</h1>
+    @Html.Partial("_OkErrorHeaderPartial", Model)
+</hgroup>
+
+<section id="centeredForm">
+    @using (Html.BeginForm(Html.BeginForm("ManagePageTile", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" })))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>@MedSiteStrings.TileEdit</legend>
+            <input type="hidden" name="Id" id="Id" value="@Model.Id" />
+
+            <ol>
+                <li>
+                    @Html.LabelFor(m => m.PageType)
+                    @Html.ValidationMessageFor(m => m.PageType)
+                    @Html.DropDownListFor(m => m.PageType, Html.GetViewTypesSelectList(typeof(PageTypes), Model.PageType))
+                </li>       
+                <li>
+                    @Html.LabelFor(m => m.TileType)
+                    @Html.ValidationMessageFor(m => m.TileType)
+                    @Html.DropDownListFor(m => m.TileType, Html.GetViewTypesSelectList(typeof(TileTypes), Model.TileType))
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.TileStyles)
+                    @Html.ValidationMessageFor(m => m.TileStyles)
+                    @Html.TextAreaFor(m => m.TileStyles)
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.ItemOrder)
+                    @Html.ValidationMessageFor(m => m.ItemOrder)
+                    <input id="ItemOrder" name="ItemOrder" type="Number" value="@Model.ItemOrder" />
+                </li>
+                <li>
+                    @Html.LabelFor(m => Model.Content)
+                    <textarea class="ckeditor" name="Content" id="Content">@Model.Content</textarea>
+                </li>
+            </ol>
+
+            <input type="submit" value="@MedSiteStrings.Save" />
+        </fieldset>
+    }
+</section>
+
+@section scripts {
+    <script src="/RichTextEditor/ckeditor.js"></script>
+}

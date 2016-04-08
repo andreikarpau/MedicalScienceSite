@@ -1,0 +1,61 @@
+﻿@model BTTechnologies.MedScience.MVC.Models.ManageAccountModel
+@{
+    ViewBag.Title = MedSiteStrings.ProfileEditingTilte;
+}
+
+<hgroup class="title">
+    <h1>@MedSiteStrings.ProfileEditingTilte</h1>
+
+    @Html.Partial("_OkErrorHeaderPartial", Model)
+</hgroup>
+
+<section id="centeredForm">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@MedSiteStrings.ProfileEditingFormTilte</legend>
+        @Html.HiddenFor(m => m.Id)
+        
+        <ol>
+            <li>@Html.ActionLink(@MedSiteStrings.ChangeEmail, "ChangeLogin")</li>
+            <li>@Html.ActionLink(@MedSiteStrings.ChangePassword, "ChangePassword")</li>
+        
+            @if (Model.AuthorId != null)
+            {
+                <li>@Html.ActionLink(@MedSiteStrings.ChangeAuthorInformation, "EditAuthorByUser", "Author", new { id = (int)Model.AuthorId }, null)</li>
+            }
+        </ol>
+
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserTmpEmail) 
+                <input type="text" readonly="readonly" name="UserTmpEmail" id="UserTmpEmail" disabled="disabled" class="readonly" value="@Model.UserTmpEmail" />
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Surname)
+                @Html.ValidationMessageFor(m => m.Surname)
+                @Html.TextBoxFor(m => m.Surname)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Name)
+                @Html.ValidationMessageFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Patronymic)
+                @Html.ValidationMessageFor(m => m.Patronymic)
+                @Html.TextBoxFor(m => m.Patronymic)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Phone)
+                @Html.ValidationMessageFor(m => m.Phone)
+                @Html.TextBoxFor(m => m.Phone)
+            </li>
+        </ol>
+        <input type="submit" value="@MedSiteStrings.Save" />
+    </fieldset>
+}
+</section>

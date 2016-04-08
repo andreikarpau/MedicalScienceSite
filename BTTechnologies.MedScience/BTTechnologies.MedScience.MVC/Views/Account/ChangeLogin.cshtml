@@ -1,0 +1,33 @@
+﻿@model BTTechnologies.MedScience.MVC.Models.ChangeLoginModel
+
+@{
+    ViewBag.Title = MedSiteStrings.ChangingEmailTilte;
+}
+
+<hgroup class="title">
+    <h1>@MedSiteStrings.ChangingEmailTilte</h1>
+
+    @Html.Partial("_OkErrorHeaderPartial", Model)
+</hgroup>
+
+<section id="centeredForm">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@MedSiteStrings.EmailChangingFormTilte</legend>
+        @Html.HiddenFor(m => m.Id)
+        
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserLogin)
+                @Html.ValidationMessageFor(m => m.UserLogin)
+                @Html.TextBoxFor(m => m.UserLogin)
+            </li>
+        </ol>
+        <input type="submit" value="@MedSiteStrings.Save" />
+    </fieldset>
+}
+</section>

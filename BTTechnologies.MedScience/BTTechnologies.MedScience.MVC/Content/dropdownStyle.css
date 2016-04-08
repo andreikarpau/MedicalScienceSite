@@ -1,0 +1,28 @@
+
+
+/* 
+	LEVEL ONE
+*/
+ul.dropdown                         { list-style-type: none; }
+ul.dropdown li                      { list-style-type: none; font-weight: 600; float: left; background-color:  #e2e2e2; border: 1px solid #787878;}
+ul.dropdown li div                  { display: block; padding: 2px;cursor: pointer; }
+
+ul.dropdown li.hover,
+ul.dropdown li:hover                { color: #395475; position: relative; border: 1px solid #395475;}
+ul.dropdown li div:hover            { color: #395475; text-decoration: underline; }
+.sub_menu                           {}
+
+/* 
+	LEVEL TWO
+*/
+ul.dropdown ul 						{ width: 220px; visibility: hidden; position: absolute; top: 100%; left: 0; }
+ul.dropdown ul li 					{ font-weight: normal; background: #f6f6f6; color: #000; float: none; }
+					  
+                     /* IE 6 & 7 Needs Inline Block */
+ul.dropdown ul li a					{ border-right: none; width: 100%; display: inline-block; } 
+
+/* 
+	LEVEL THREE
+*/
+ul.dropdown ul ul 					{ left: 100%; top: 0; }
+ul.dropdown li:hover > ul 			{ visibility: visible; }

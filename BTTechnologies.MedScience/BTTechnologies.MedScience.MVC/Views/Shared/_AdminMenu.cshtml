@@ -1,0 +1,13 @@
+﻿@if (ServicesHelper.GetMembershipService().UserIsAdmin(User.Identity.Name))
+{
+    <nav>
+        <ul id="menu" class="blue-font nullPaddingMargin">
+            <li>@Html.ActionLink(@MedSiteStrings.UsersMenuItem, "UsersGrid", "Admin")</li>
+            <li>@Html.ActionLink(@MedSiteStrings.DocumentsMenuItem, "DocumentsGrid", "Documents")</li>
+            <li>@Html.ActionLink(@MedSiteStrings.AuthorsMenuItem, "AuthorsGrid", "Author")</li>
+            <li>@Html.ActionLink(@MedSiteStrings.ArticlesChangingLogMenuItem, "ArticleLogGrid", "Log")</li>
+            <li>@Html.ActionLink(@MedSiteStrings.Files, "SiteFilesGrid", "Documents")</li>
+            <li class="nullRightPaddingMargin">@Html.ActionLink(@MedSiteStrings.Content, "TilesGrid", "Admin")</li>
+        </ul>
+    </nav>
+}

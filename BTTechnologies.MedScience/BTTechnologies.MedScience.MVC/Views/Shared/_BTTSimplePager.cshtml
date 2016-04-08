@@ -1,0 +1,37 @@
+﻿@model BTTechnologies.MedScience.MVC.BTTClasses.BTTSimplePagerModel
+@{
+    const string firstLastPagesDivider = "... ";
+    int? firstPage;
+    int? lastPge;
+    var orderedPages = Model.GetPagesNumbers(out firstPage, out lastPge).OrderBy(i => i.Key);
+}
+
+<div id="BTTSimplePager">
+    @if (firstPage != null)
+    {
+        <a href="@Model.GetActionUrlFunction((int)firstPage)">@string.Format("{0} ", (int)firstPage)</a>
+    
+        if (2 < orderedPages.First().Key)
+        {
+            @firstLastPagesDivider
+        }
+    }
+    
+    
+
+    @foreach (KeyValuePair<int, string> keyValuePair in orderedPages)
+    {
+        <a href="@keyValuePair.Value" class="@(keyValuePair.Key == Model.CurrentPage ? "BTT-pager-selected-page": string.Empty)">@string.Format("{0} ", keyValuePair.Key)</a>
+    }
+
+
+    @if (lastPge != null)
+    {
+        if (orderedPages.Last().Key < lastPge - 1)
+        {
+            @firstLastPagesDivider
+        }    
+
+        <a href="@Model.GetActionUrlFunction((int)lastPge)">@string.Format("{0} ", (int)lastPge)</a>
+    }
+</div>

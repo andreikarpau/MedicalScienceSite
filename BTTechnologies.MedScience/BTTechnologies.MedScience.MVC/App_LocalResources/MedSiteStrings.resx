@@ -1,0 +1,697 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountActivationCode" xml:space="preserve">
+    <value>Код акцивации аккаунта</value>
+  </data>
+  <data name="AccountActivationTitle" xml:space="preserve">
+    <value>Активация аккаунта</value>
+  </data>
+  <data name="AccountAlreadyExistsError" xml:space="preserve">
+    <value>Аккаунт с таким e-mail-ом уже существует</value>
+  </data>
+  <data name="AccountAlreadyExistsErrorWithHelp" xml:space="preserve">
+    <value>Аккаунт с таким e-mail-ом уже существует. Если вы забыли пароль используйте опцию "Восстановление пароля"</value>
+  </data>
+  <data name="AccountSuccessfullyActivate" xml:space="preserve">
+    <value>Ваш аккаунт успешно активирован!</value>
+  </data>
+  <data name="ActivateAccount" xml:space="preserve">
+    <value>Активировать аккаунт</value>
+  </data>
+  <data name="ActivationCodeWasSent" xml:space="preserve">
+    <value>На e-mail {0} было выслано письмо с кодом активации. Если данное письмо не было получено нажмите кнопку "Отправить повторно". Также проверьте папку "Спам".</value>
+  </data>
+  <data name="AdminCannotChangeHisRoles" xml:space="preserve">
+    <value>Администратор не может менять свои роли</value>
+  </data>
+  <data name="AdminCannotDeleteHimSelfError" xml:space="preserve">
+    <value>Администратор не может удалить свой аккаунт</value>
+  </data>
+  <data name="AuthorDegree" xml:space="preserve">
+    <value>Научная степень</value>
+  </data>
+  <data name="AuthorIsActivated" xml:space="preserve">
+    <value>Автор активирован</value>
+  </data>
+  <data name="ChangeEmail" xml:space="preserve">
+    <value>Изменить e-mail</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Изменить пароль</value>
+  </data>
+  <data name="ChangingEmailTilte" xml:space="preserve">
+    <value>Изменение адреса электронной почты пользователя</value>
+  </data>
+  <data name="ChangingPasswordFormTitle" xml:space="preserve">
+    <value>Форма изменения пароля</value>
+  </data>
+  <data name="ChangingPasswordTitle" xml:space="preserve">
+    <value>Изменение пароля</value>
+  </data>
+  <data name="DeleteText" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="DocumentsCount" xml:space="preserve">
+    <value>Кол-во публикаций</value>
+  </data>
+  <data name="EditText" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="EmailChangingFormTilte" xml:space="preserve">
+    <value>Форма изменения e-mail</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="EnterFormTitle" xml:space="preserve">
+    <value>Форма входа</value>
+  </data>
+  <data name="EnterWordToRecaptcha" xml:space="preserve">
+    <value>Введите слово, указанное на картинке</value>
+  </data>
+  <data name="FieldShouldBeFilled" xml:space="preserve">
+    <value>Данное поле должно быть заполнено</value>
+  </data>
+  <data name="FullPhoneNumberWithExample" xml:space="preserve">
+    <value>Полный номер телефона (Пример: +7 351 222 22 22)</value>
+  </data>
+  <data name="IncorrectPasswordError" xml:space="preserve">
+    <value>Введен неверный пароль</value>
+  </data>
+  <data name="IncorrectVerificationCodeError" xml:space="preserve">
+    <value>Введен неверный проверочный код</value>
+  </data>
+  <data name="LastLogIn" xml:space="preserve">
+    <value>Последний раз заходил</value>
+  </data>
+  <data name="LinkedAccountLogin" xml:space="preserve">
+    <value>Логин присоединенного аккаунта</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Зугрузка...</value>
+  </data>
+  <data name="LoginNotFoundError" xml:space="preserve">
+    <value>Пользователь с таким e-mail-ом не зарегистрирован на сайте</value>
+  </data>
+  <data name="LogInTitle" xml:space="preserve">
+    <value>Вход на сайт</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="NeedSaveQuestion" xml:space="preserve">
+    <value>Запомнить?</value>
+  </data>
+  <data name="NewEmail" xml:space="preserve">
+    <value>Новый e-mail</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Далее</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Старый пароль</value>
+  </data>
+  <data name="OnlySuperUserCanDeleteOtherAdminsError" xml:space="preserve">
+    <value>Только Super Administrator может удалять других администраторов</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="PasswordConfirmation" xml:space="preserve">
+    <value>Подтверждение пароля</value>
+  </data>
+  <data name="PasswordIsChangedSuccessful" xml:space="preserve">
+    <value>Пароль успешно изменен</value>
+  </data>
+  <data name="PasswordLengthError" xml:space="preserve">
+    <value>Длинна пароля должна быть не менее {2} символов</value>
+  </data>
+  <data name="Patronymic" xml:space="preserve">
+    <value>Отчество</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="RecaptchaError" xml:space="preserve">
+    <value>Введенное слово и слово на картинке не совпадают</value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="RegistrationDate" xml:space="preserve">
+    <value>Дата регистрации</value>
+  </data>
+  <data name="RestoaringPasswordTitle" xml:space="preserve">
+    <value>Восстановление пароля</value>
+  </data>
+  <data name="RestorationAccountCode" xml:space="preserve">
+    <value>Код восстановления пароля аккаунта</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="SendAgain" xml:space="preserve">
+    <value>Отправить повторно</value>
+  </data>
+  <data name="Surname" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="UnknownErrorOccured" xml:space="preserve">
+    <value>Произошла неизвестная ошибка. Если данная ошибка будет повторяться, обратитесь в тех. поддержку</value>
+  </data>
+  <data name="UserEmail" xml:space="preserve">
+    <value>E-mail пользователя</value>
+  </data>
+  <data name="UserEmailLogin" xml:space="preserve">
+    <value>Email пользователя (Логин)</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Имя пользователя</value>
+  </data>
+  <data name="UserRoles" xml:space="preserve">
+    <value>Роли пользователя</value>
+  </data>
+  <data name="WantToDeleteRecordQuestion" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить данную запись?</value>
+  </data>
+  <data name="WrongActivationCodeError" xml:space="preserve">
+    <value>Введен неверный код активации. Письмо с новым кодом активации отправлено повторно.</value>
+  </data>
+  <data name="WrongEmailError" xml:space="preserve">
+    <value>Указан не верный e-mail</value>
+  </data>
+  <data name="WrongLoginOrPassword" xml:space="preserve">
+    <value>Неверное имя пользователя или пароль</value>
+  </data>
+  <data name="WrongPasswordConfirmation" xml:space="preserve">
+    <value>Пароль и его подтверждение не совпадают</value>
+  </data>
+  <data name="YourEmail" xml:space="preserve">
+    <value>Ваш e-mail</value>
+  </data>
+  <data name="YourNewPassword" xml:space="preserve">
+    <value>Ваш новый пароль</value>
+  </data>
+  <data name="YourPassword" xml:space="preserve">
+    <value>Ваш пароль</value>
+  </data>
+  <data name="AboutMenuItemAndPageTitle" xml:space="preserve">
+    <value>О cайте</value>
+  </data>
+  <data name="AllAuthorsTitle" xml:space="preserve">
+    <value>Все авторы</value>
+  </data>
+  <data name="AllUsersTitle" xml:space="preserve">
+    <value>Все пользователи</value>
+  </data>
+  <data name="AuthorsMenuItem" xml:space="preserve">
+    <value>Авторы</value>
+  </data>
+  <data name="ContactsMenuItemAndTitle" xml:space="preserve">
+    <value>Контакты</value>
+  </data>
+  <data name="DocumentsMenuItem" xml:space="preserve">
+    <value>Документы</value>
+  </data>
+  <data name="DoRegister" xml:space="preserve">
+    <value>Зарегистрироваться</value>
+  </data>
+  <data name="ErrorWhenChangingPassword" xml:space="preserve">
+    <value>При изменении пароля произошла ошибка!</value>
+  </data>
+  <data name="MainPageMenuItemAndTitle" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="PasswordVerificationCodeWasSent" xml:space="preserve">
+    <value>На e-mail {0} было выслано письмо с кодом для изменения пароля. Если данное письмо не было получено проверьте правильность введенного вами адреса. Также проверьте папку "Спам".</value>
+  </data>
+  <data name="ProfileEditingFormTilte" xml:space="preserve">
+    <value>Форма редактирования профиля</value>
+  </data>
+  <data name="ProfileEditingTilte" xml:space="preserve">
+    <value>Редактирование профиля</value>
+  </data>
+  <data name="RegistrationFormTitle" xml:space="preserve">
+    <value>Форма регистрации</value>
+  </data>
+  <data name="SavePassword" xml:space="preserve">
+    <value>Сохранить пароль</value>
+  </data>
+  <data name="UsersDataTitle" xml:space="preserve">
+    <value>Данные пользователя</value>
+  </data>
+  <data name="UsersMenuItem" xml:space="preserve">
+    <value>Пользователи</value>
+  </data>
+  <data name="AddRole" xml:space="preserve">
+    <value>Добавить роль</value>
+  </data>
+  <data name="EnterButtonName" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="ErrorPageTitle" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="ForgetPasswordInfo" xml:space="preserve">
+    <value>Если вы забыли пароль нажмите</value>
+  </data>
+  <data name="NoAccountInfo" xml:space="preserve">
+    <value>Если у вас еще нет аккаунта нажмите</value>
+  </data>
+  <data name="UserWithLoginName" xml:space="preserve">
+    <value>Пользователь {0}</value>
+  </data>
+  <data name="AddNewAuthor" xml:space="preserve">
+    <value>Добавить автора </value>
+  </data>
+  <data name="AuthorStatusProved" xml:space="preserve">
+    <value>Статус автора подтвержден</value>
+  </data>
+  <data name="DegreeAndOtherInfo" xml:space="preserve">
+    <value>Научная степень и другая информация о достижениях автора</value>
+  </data>
+  <data name="EditingAuthorFormTitle" xml:space="preserve">
+    <value>Форма редактирования автора</value>
+  </data>
+  <data name="EditingAuthorTitle" xml:space="preserve">
+    <value>Редактирование информации об авторе</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="AccountNameSurnameLogin" xml:space="preserve">
+    <value>{0} {1}, {2}</value>
+  </data>
+  <data name="SelectAuthorsAccount" xml:space="preserve">
+    <value>Выбрать аккаунт автора</value>
+  </data>
+  <data name="AuthorsAccount" xml:space="preserve">
+    <value>Аккаунт автора</value>
+  </data>
+  <data name="NoAccount" xml:space="preserve">
+    <value>Нет аккаунта</value>
+  </data>
+  <data name="DataIsSavedWithSuccess" xml:space="preserve">
+    <value>Данные успешно сохранены</value>
+  </data>
+  <data name="ErrorsFoundWhenSavingData" xml:space="preserve">
+    <value>При сохранении данных возникли ошибки</value>
+  </data>
+  <data name="ChangeAuthorInformation" xml:space="preserve">
+    <value>Изменить информацию об авторе</value>
+  </data>
+  <data name="NonAdminCannotManageNotLinkedAuthor" xml:space="preserve">
+    <value>Пользователь не являющийся администратором не может редактировать данные автора, который не привязан к его аккаунту.</value>
+  </data>
+  <data name="ArticleDescription" xml:space="preserve">
+    <value>Описание статьи</value>
+  </data>
+  <data name="ArticleName" xml:space="preserve">
+    <value>Заглавие</value>
+  </data>
+  <data name="AttachedFiles" xml:space="preserve">
+    <value>Присоединенные файлы</value>
+  </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Авторы</value>
+  </data>
+  <data name="ArticlesList" xml:space="preserve">
+    <value>Список статей</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Разделы</value>
+  </data>
+  <data name="Published" xml:space="preserve">
+    <value>Опубликована</value>
+  </data>
+  <data name="AddNewArticle" xml:space="preserve">
+    <value>Добавить статью</value>
+  </data>
+  <data name="ArticleContent" xml:space="preserve">
+    <value>Текст статьи</value>
+  </data>
+  <data name="ArticleEditing" xml:space="preserve">
+    <value>Редактирование статьи</value>
+  </data>
+  <data name="AttachFileToArticle" xml:space="preserve">
+    <value>Присоединить файл к статье</value>
+  </data>
+  <data name="NothingFound" xml:space="preserve">
+    <value>Ничего не найдено</value>
+  </data>
+  <data name="ArticleAuthors" xml:space="preserve">
+    <value>Авторы статьи</value>
+  </data>
+  <data name="InputAuthorNameOrSurname" xml:space="preserve">
+    <value>Введите фамилию или имя автора</value>
+  </data>
+  <data name="InputCategory" xml:space="preserve">
+    <value>Введите название раздела</value>
+  </data>
+  <data name="AddNewCategory" xml:space="preserve">
+    <value>Добавить категорию</value>
+  </data>
+  <data name="ArticleCategories" xml:space="preserve">
+    <value>Категории статьи</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="CategoryExistsError" xml:space="preserve">
+    <value>Категория с таким названием уже существует</value>
+  </data>
+  <data name="ArticleTitleCannotBeEmptyError" xml:space="preserve">
+    <value>Заглавие статьи не может быть пустым</value>
+  </data>
+  <data name="ArticleWithSuchNameAlreadyExistsError" xml:space="preserve">
+    <value>Статья с таким заглавием уже существует</value>
+  </data>
+  <data name="AttachmentFilesSavingError" xml:space="preserve">
+    <value>Во время сохранения присоединенных файлов произошла ошибка</value>
+  </data>
+  <data name="AccessError" xml:space="preserve">
+    <value>Ошибка доступа</value>
+  </data>
+  <data name="AttachedFilesCount" xml:space="preserve">
+    <value>Количество присоединенных файлов</value>
+  </data>
+  <data name="AccoutId" xml:space="preserve">
+    <value>Id Аккаунта</value>
+  </data>
+  <data name="ArticlesLogGridTitle" xml:space="preserve">
+    <value>Лог изменений в статьях</value>
+  </data>
+  <data name="ChangedTime" xml:space="preserve">
+    <value>Время изменения</value>
+  </data>
+  <data name="DBUser" xml:space="preserve">
+    <value>Логин в DB</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="LoginWhoChanged" xml:space="preserve">
+    <value>Логин</value>
+  </data>
+  <data name="AdditionalMenuItem" xml:space="preserve">
+    <value>Дополнительно</value>
+  </data>
+  <data name="ArticlesCatalog" xml:space="preserve">
+    <value>Каталог статей</value>
+  </data>
+  <data name="ArticlesChangingLogMenuItem" xml:space="preserve">
+    <value>Лог</value>
+  </data>
+  <data name="LastChanged" xml:space="preserve">
+    <value>Дата изменения</value>
+  </data>
+  <data name="NoArticleFound" xml:space="preserve">
+    <value>Не найдено ни одной статьи</value>
+  </data>
+  <data name="ReadAllArticlesDisplayNameFilterTitle" xml:space="preserve">
+    <value>Поиск по заглавию </value>
+  </data>
+  <data name="DoSearch" xml:space="preserve">
+    <value>Найти</value>
+  </data>
+  <data name="ColonWithSpaceAfter" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="Documents" xml:space="preserve">
+    <value>Документы</value>
+  </data>
+  <data name="AllArticles" xml:space="preserve">
+    <value>Все статьи</value>
+  </data>
+  <data name="AllAuthors" xml:space="preserve">
+    <value>Все авторы</value>
+  </data>
+  <data name="AllCategories" xml:space="preserve">
+    <value>Разделы</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
+  <data name="AuthorHasNArticles" xml:space="preserve">
+    <value>Количество статей автора: {0}</value>
+  </data>
+  <data name="NoAuthorsFound" xml:space="preserve">
+    <value>Не найдено ни одного автора</value>
+  </data>
+  <data name="AllArticlesOfAuthor" xml:space="preserve">
+    <value>Список статей автора {0}</value>
+  </data>
+  <data name="AllArtilcesOfCategory" xml:space="preserve">
+    <value>Все статьи раздела "{0}"</value>
+  </data>
+  <data name="CategoryHasNArticles" xml:space="preserve">
+    <value>Количество статей в разделе: {0}</value>
+  </data>
+  <data name="NoCategoriesFound" xml:space="preserve">
+    <value>Не найдено ни одного раздела</value>
+  </data>
+  <data name="SearchResults" xml:space="preserve">
+    <value>Результаты поиска</value>
+  </data>
+  <data name="SiteSearch" xml:space="preserve">
+    <value>Поиск по сайту</value>
+  </data>
+  <data name="ArticleSearchName" xml:space="preserve">
+    <value>Статья: {0}</value>
+  </data>
+  <data name="AuthorSearchName" xml:space="preserve">
+    <value>Автор: {0}</value>
+  </data>
+  <data name="CategorySearchName" xml:space="preserve">
+    <value>Раздел: {0}</value>
+  </data>
+  <data name="QuickSearchPanelTitle" xml:space="preserve">
+    <value>Результаты быстрого поиска</value>
+  </data>
+  <data name="ShowAllResults" xml:space="preserve">
+    <value>Показать все результаты быстрого поиска</value>
+  </data>
+  <data name="NextAbbrWithArrow" xml:space="preserve">
+    <value>След. &gt;</value>
+  </data>
+  <data name="PreviousAbbrWithArrow" xml:space="preserve">
+    <value>&lt; Пред.</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Техническая поддержка</value>
+  </data>
+  <data name="InputCaptchaText" xml:space="preserve">
+    <value>Введите текст указанный сверху</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="EditArticlePageLink" xml:space="preserve">
+    <value>Редактировать статью</value>
+  </data>
+  <data name="GoToArticle" xml:space="preserve">
+    <value>Перейти к статье</value>
+  </data>
+  <data name="MainPageTitle" xml:space="preserve">
+    <value>Научные статьи по медицине (MedicineScience.ru)</value>
+  </data>
+  <data name="MainPageDescription" xml:space="preserve">
+    <value>Медицинские научные статьи. Здесь вы найдете информацию о здоровье, болезнях и их причинах. Статьи представляют интерес как для практикующих врачей, так и для пациентов.</value>
+  </data>
+  <data name="MainPageKeyWords" xml:space="preserve">
+    <value>Медицинские статьи, статьи о медицине, статьи о 
+научные статьи, медицинские статьи, статьи о медицине, статьи о здоровье, повышение квалификации</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="DeleteFileConfirm" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить данный файл?</value>
+  </data>
+  <data name="SiteFiles" xml:space="preserve">
+    <value>Загрузка файлов и изображений на сайт</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Файлы</value>
+  </data>
+  <data name="AddNewPageTile" xml:space="preserve">
+    <value>Создать контейнер</value>
+  </data>
+  <data name="ContentTiles" xml:space="preserve">
+    <value>Редактирование контента (Page Content Tiles)</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Порядок</value>
+  </data>
+  <data name="PageType" xml:space="preserve">
+    <value>Тип страницы</value>
+  </data>
+  <data name="TyleStyles" xml:space="preserve">
+    <value>Стили</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Контент</value>
+  </data>
+  <data name="TileEdit" xml:space="preserve">
+    <value>Редактирование контейнера</value>
+  </data>
+  <data name="ConteinerContent" xml:space="preserve">
+    <value>Содержимое контейнера</value>
+  </data>
+  <data name="CSSStylesOfConteiner" xml:space="preserve">
+    <value>CSS стили контейнера /n (например: big-content-container, middle-content-container, small-content-container)</value>
+  </data>
+  <data name="OrderOfConteiner" xml:space="preserve">
+    <value>Порядковый номер контейнера</value>
+  </data>
+  <data name="WhereToShowContent" xml:space="preserve">
+    <value>Где отображать контент</value>
+  </data>
+  <data name="TileType" xml:space="preserve">
+    <value>Тип контейнера</value>
+  </data>
+  <data name="ByModificationDate" xml:space="preserve">
+    <value>По дате последнего изменения</value>
+  </data>
+  <data name="ByName" xml:space="preserve">
+    <value>По наименованию</value>
+  </data>
+  <data name="SortingBy" xml:space="preserve">
+    <value>Сортировать по:</value>
+  </data>
+  <data name="ByCreationDate" xml:space="preserve">
+    <value>По дате создания</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Еще ...</value>
+  </data>
+</root>

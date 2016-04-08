@@ -1,0 +1,15 @@
+﻿@if (Request.IsAuthenticated) {
+    <text>
+        @(ServicesHelper.GetMembershipService().CurrentUserIsActivated(User.Identity.Name) ? Html.ActionLink(string.Format(MedSiteStrings.UserWithLoginName, User.Identity.Name), "Manage", "Account", null, new { @class = "username", title = "Manage" }) : Html.ActionLink(string.Format(MedSiteStrings.UserWithLoginName, User.Identity.Name), "ActivateUser", "Account", null, new { @class = "username", title = "Manage" }))!       
+        
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a>
+        }        
+    </text>
+} else {
+    <ul>
+        <li>@Html.ActionLink(MedSiteStrings.Registration, "Register", "Account", null, new { id = "registerLink" })</li>
+        <li class="nullRightPaddingMargin">@Html.ActionLink(MedSiteStrings.EnterButtonName, "Login", "Account", null, new { id = "loginLink" })</li>
+    </ul>
+}

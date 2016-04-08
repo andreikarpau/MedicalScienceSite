@@ -1,0 +1,1055 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5221241F-BFB3-4DE0-BCC8-A6292D53BBE8}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BTTechnologies.MedScience.MVC</RootNamespace>
+    <AssemblyName>BTTechnologies.MedScience.MVC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CaptchaMvc">
+      <HintPath>..\packages\CaptchaMvc.Mvc4.1.5.0\lib\net40-full\CaptchaMvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\packages\Quartz.2.2.1\lib\net40\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_LocalResources\MedSiteStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MedSiteStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BTTClasses\BTTAjaxFilesUploaderModel.cs" />
+    <Compile Include="BTTClasses\BTTAjaxFileUploader.cs" />
+    <Compile Include="BTTClasses\BTTAjaxInputGridModel.cs" />
+    <Compile Include="BTTClasses\BTTAjaxOutputGridModel.cs" />
+    <Compile Include="BTTClasses\BTTXmlLogger.cs" />
+    <Compile Include="ControllersServices\Abstract\IAdminService.cs" />
+    <Compile Include="ControllersServices\Abstract\IAuthorService.cs" />
+    <Compile Include="ControllersServices\Abstract\IDocumentService.cs" />
+    <Compile Include="ControllersServices\Abstract\IHomeService.cs" />
+    <Compile Include="ControllersServices\Abstract\ILogService.cs" />
+    <Compile Include="ControllersServices\Abstract\IMembershipService.cs" />
+    <Compile Include="ControllersServices\Abstract\IReadArticlesService.cs" />
+    <Compile Include="ControllersServices\Abstract\ISupportService.cs" />
+    <Compile Include="ControllersServices\Concrete\AdminService.cs" />
+    <Compile Include="ControllersServices\Abstract\IAccountService.cs" />
+    <Compile Include="ControllersServices\Concrete\AccountService.cs" />
+    <Compile Include="ControllersServices\Concrete\AuthorService.cs" />
+    <Compile Include="ControllersServices\Concrete\DocumentService.cs" />
+    <Compile Include="ControllersServices\Concrete\HomeService.cs" />
+    <Compile Include="ControllersServices\Concrete\LogService.cs" />
+    <Compile Include="ControllersServices\Concrete\ReadArticlesService.cs" />
+    <Compile Include="ControllersServices\Concrete\SupportService.cs.cs" />
+    <Compile Include="Helpers\HTMLHelper.cs" />
+    <Compile Include="Helpers\ServicesHelper.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AuthorController.cs" />
+    <Compile Include="Controllers\DocumentsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LogController.cs" />
+    <Compile Include="Controllers\ReadArticlesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="BTTClasses\BTTAjaxGridHelper.cs" />
+    <Compile Include="Helpers\ConfigurationManagerHelper.cs" />
+    <Compile Include="Helpers\EmailHelper.cs" />
+    <Compile Include="Helpers\ExceptionsLogger.cs" />
+    <Compile Include="Helpers\FilesHelper.cs" />
+    <Compile Include="Helpers\SitemapGenerator\ISitemapGenerator.cs" />
+    <Compile Include="Helpers\SitemapGenerator\ISitemapItem.cs" />
+    <Compile Include="Helpers\SitemapGenerator\SitemapGenerator.cs" />
+    <Compile Include="Helpers\SitemapGenerator\SitemapItem.cs" />
+    <Compile Include="Helpers\SitemapGenerator\SitemapResult.cs" />
+    <Compile Include="Helpers\UrlHelperExtensions.cs" />
+    <Compile Include="Infrastructure\Dependency\NinjectDependencyResolver.cs" />
+    <Compile Include="Infrastructure\EnumDescriptionAttribute.cs" />
+    <Compile Include="Infrastructure\EnumDescriptionHelper.cs" />
+    <Compile Include="Infrastructure\Messages\MedScienceErrors.cs" />
+    <Compile Include="Infrastructure\ModelsMapper.cs" />
+    <Compile Include="Infrastructure\Security\EmailValidationAttribute.cs" />
+    <Compile Include="ControllersServices\Concrete\MembershipService.cs" />
+    <Compile Include="Infrastructure\Security\PermissionAttribute.cs" />
+    <Compile Include="Infrastructure\Security\RolesPrivileges.cs" />
+    <Compile Include="Infrastructure\Sheduler\QuartzScheduler.cs" />
+    <Compile Include="Infrastructure\Sheduler\SchedulerJob.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AdminModels.cs" />
+    <Compile Include="Models\AllUsersGridModel.cs" />
+    <Compile Include="BTTClasses\BTTAjaxGridModel.cs" />
+    <Compile Include="Models\AuthorModels.cs" />
+    <Compile Include="Models\ContentQuickSearchModel.cs" />
+    <Compile Include="Models\HomeModels.cs" />
+    <Compile Include="Models\IOkErrorModel.cs" />
+    <Compile Include="Models\ManageArticleModel.cs" />
+    <Compile Include="Models\ShowAllArticlesModel.cs" />
+    <Compile Include="BTTClasses\BTTSimplePagerModel.cs" />
+    <Compile Include="QuickSearchString\QuickSearchStringModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickSearchString\QuickSearchInputModel.cs" />
+    <Compile Include="QuickSearchString\QuickSearchStringOutputModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\BTTAjaxFilesUploaderStyles.css" />
+    <Content Include="Content\BTTAjaxTableStyles.css" />
+    <Content Include="Content\BTTDropDownMenuStyles.css" />
+    <Content Include="Content\dropdownStyle.css" />
+    <Content Include="Content\QuickSearchStringStyles.css" />
+    <Content Include="Content\SiteQuickSearchPanelStyles.css" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Content\YandexSearchStyles.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\add-button-green.png" />
+    <Content Include="Images\arrow-sort-down.png" />
+    <Content Include="Images\arrow-sort-up.png" />
+    <Content Include="Images\delete-button-red.png" />
+    <Content Include="Images\delete-metro-button.png" />
+    <Content Include="Images\edit-metro-button.png" />
+    <Content Include="Images\footer-back-color.jpg" />
+    <Content Include="Images\footer-divider-hor.png" />
+    <Content Include="Images\footer-divider.png" />
+    <Content Include="Images\header-background.jpg" />
+    <Content Include="Images\loadingBar.gif" />
+    <Content Include="Images\loadingBlueBar.gif" />
+    <Content Include="Images\logos\logoWithText.png" />
+    <Content Include="Images\main-back-color.jpg" />
+    <Content Include="Images\search-lens-icon.png" />
+    <Content Include="Images\search-line-background.png" />
+    <Content Include="RichTextEditor\adapters\jquery.js" />
+    <Content Include="RichTextEditor\build-config.js" />
+    <Content Include="RichTextEditor\ckeditor.js" />
+    <Content Include="RichTextEditor\CKEditorLanguage.js" />
+    <Content Include="RichTextEditor\config.js" />
+    <Content Include="RichTextEditor\contents.css" />
+    <Content Include="RichTextEditor\lang\en.js" />
+    <Content Include="RichTextEditor\lang\ru.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="RichTextEditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="RichTextEditor\plugins\about\dialogs\about.js" />
+    <Content Include="RichTextEditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="RichTextEditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="RichTextEditor\plugins\button\plugin.js" />
+    <Content Include="RichTextEditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\icons\bgcolor.png" />
+    <Content Include="RichTextEditor\plugins\colorbutton\icons\hidpi\bgcolor.png" />
+    <Content Include="RichTextEditor\plugins\colorbutton\icons\hidpi\textcolor.png" />
+    <Content Include="RichTextEditor\plugins\colorbutton\icons\textcolor.png" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\af.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\ar.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\bg.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\bn.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\bs.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\ca.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\cs.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\cy.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\da.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\de.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\el.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\en-au.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\en-ca.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\en-gb.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\en.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\eo.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\es.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\et.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\eu.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\fa.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\fi.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\fo.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\fr-ca.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\fr.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\gl.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\gu.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\he.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\hi.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\hr.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\hu.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\id.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\is.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\it.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\ja.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\ka.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\km.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\ko.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\ku.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\lt.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\lv.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\mk.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\mn.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\ms.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\nb.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\nl.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\no.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\pl.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\pt-br.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\pt.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\ro.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\ru.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\si.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\sk.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\sl.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\sq.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\sr-latn.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\sr.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\sv.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\th.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\tr.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\ug.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\uk.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\vi.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\zh-cn.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\lang\zh.js" />
+    <Content Include="RichTextEditor\plugins\colorbutton\plugin.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\af.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\ar.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\bg.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\bn.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\bs.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\ca.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\cs.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\cy.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\da.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\de.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\el.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\en-au.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\en-ca.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\en-gb.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\en.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\eo.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\es.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\et.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\eu.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\fa.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\fi.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\fo.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\fr-ca.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\fr.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\gl.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\gu.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\he.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\hi.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\hr.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\hu.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\is.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\it.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\ja.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\ka.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\km.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\ko.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\ku.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\lt.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\lv.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\mk.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\mn.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\ms.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\nb.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\nl.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\no.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\pl.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\pt-br.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\pt.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\ro.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\ru.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\si.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\sk.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\sl.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\sq.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\sr-latn.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\sr.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\sv.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\th.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\tr.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\ug.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\uk.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\vi.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\zh-cn.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\lang\zh.js" />
+    <Content Include="RichTextEditor\plugins\colordialog\plugin.js" />
+    <Content Include="RichTextEditor\plugins\dialogui\plugin.js" />
+    <Content Include="RichTextEditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="RichTextEditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="RichTextEditor\plugins\font\lang\af.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\ar.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\bg.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\bn.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\bs.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\ca.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\cs.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\cy.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\da.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\de.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\el.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\en-au.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\en-ca.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\en-gb.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\en.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\eo.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\es.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\et.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\eu.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\fa.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\fi.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\fo.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\fr-ca.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\fr.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\gl.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\gu.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\he.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\hi.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\hr.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\hu.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\id.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\is.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\it.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\ja.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\ka.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\km.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\ko.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\ku.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\lt.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\lv.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\mk.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\mn.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\ms.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\nb.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\nl.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\no.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\pl.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\pt-br.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\pt.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\ro.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\ru.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\si.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\sk.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\sl.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\sq.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\sr-latn.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\sr.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\sv.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\th.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\tr.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\ug.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\uk.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\vi.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\zh-cn.js" />
+    <Content Include="RichTextEditor\plugins\font\lang\zh.js" />
+    <Content Include="RichTextEditor\plugins\font\plugin.js" />
+    <Content Include="RichTextEditor\plugins\icons.png" />
+    <Content Include="RichTextEditor\plugins\icons_hidpi.png" />
+    <Content Include="RichTextEditor\plugins\image\dialogs\image.js" />
+    <Content Include="RichTextEditor\plugins\image\images\noimage.png" />
+    <Content Include="RichTextEditor\plugins\justify\icons\hidpi\justifyblock.png" />
+    <Content Include="RichTextEditor\plugins\justify\icons\hidpi\justifycenter.png" />
+    <Content Include="RichTextEditor\plugins\justify\icons\hidpi\justifyleft.png" />
+    <Content Include="RichTextEditor\plugins\justify\icons\hidpi\justifyright.png" />
+    <Content Include="RichTextEditor\plugins\justify\icons\justifyblock.png" />
+    <Content Include="RichTextEditor\plugins\justify\icons\justifycenter.png" />
+    <Content Include="RichTextEditor\plugins\justify\icons\justifyleft.png" />
+    <Content Include="RichTextEditor\plugins\justify\icons\justifyright.png" />
+    <Content Include="RichTextEditor\plugins\justify\lang\af.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\ar.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\bg.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\bn.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\bs.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\ca.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\cs.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\cy.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\da.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\de.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\el.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\en-au.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\en-ca.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\en-gb.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\en.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\eo.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\es.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\et.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\eu.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\fa.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\fi.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\fo.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\fr-ca.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\fr.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\gl.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\gu.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\he.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\hi.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\hr.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\hu.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\id.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\is.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\it.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\ja.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\ka.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\km.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\ko.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\ku.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\lt.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\lv.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\mk.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\mn.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\ms.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\nb.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\nl.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\no.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\pl.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\pt-br.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\pt.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\ro.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\ru.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\si.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\sk.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\sl.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\sq.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\sr-latn.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\sr.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\sv.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\th.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\tr.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\ug.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\uk.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\vi.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\zh-cn.js" />
+    <Content Include="RichTextEditor\plugins\justify\lang\zh.js" />
+    <Content Include="RichTextEditor\plugins\justify\plugin.js" />
+    <Content Include="RichTextEditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="RichTextEditor\plugins\link\dialogs\link.js" />
+    <Content Include="RichTextEditor\plugins\link\images\anchor.png" />
+    <Content Include="RichTextEditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="RichTextEditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="RichTextEditor\plugins\magicline\images\icon.png" />
+    <Content Include="RichTextEditor\plugins\panelbutton\plugin.js" />
+    <Content Include="RichTextEditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="RichTextEditor\plugins\preview\icons\hidpi\preview-rtl.png" />
+    <Content Include="RichTextEditor\plugins\preview\icons\hidpi\preview.png" />
+    <Content Include="RichTextEditor\plugins\preview\icons\preview-rtl.png" />
+    <Content Include="RichTextEditor\plugins\preview\icons\preview.png" />
+    <Content Include="RichTextEditor\plugins\preview\lang\af.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\ar.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\bg.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\bn.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\bs.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\ca.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\cs.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\cy.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\da.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\de.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\el.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\en-au.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\en-ca.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\en-gb.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\en.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\eo.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\es.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\et.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\eu.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\fa.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\fi.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\fo.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\fr-ca.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\fr.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\gl.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\gu.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\he.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\hi.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\hr.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\hu.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\id.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\is.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\it.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\ja.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\ka.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\km.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\ko.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\ku.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\lt.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\lv.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\mk.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\mn.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\ms.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\nb.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\nl.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\no.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\pl.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\pt-br.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\pt.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\ro.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\ru.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\si.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\sk.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\sl.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\sq.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\sr-latn.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\sr.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\sv.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\th.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\tr.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\ug.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\uk.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\vi.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\zh-cn.js" />
+    <Content Include="RichTextEditor\plugins\preview\lang\zh.js" />
+    <Content Include="RichTextEditor\plugins\preview\plugin.js" />
+    <Content Include="RichTextEditor\plugins\preview\preview.html" />
+    <Content Include="RichTextEditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="RichTextEditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="RichTextEditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="RichTextEditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="RichTextEditor\plugins\table\dialogs\table.js" />
+    <Content Include="RichTextEditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="RichTextEditor\plugins\wsc\dialogs\tmp.html" />
+    <Content Include="RichTextEditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="RichTextEditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="RichTextEditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="RichTextEditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="RichTextEditor\skins\moono\dialog.css" />
+    <Content Include="RichTextEditor\skins\moono\dialog_ie.css" />
+    <Content Include="RichTextEditor\skins\moono\dialog_ie7.css" />
+    <Content Include="RichTextEditor\skins\moono\dialog_ie8.css" />
+    <Content Include="RichTextEditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="RichTextEditor\skins\moono\dialog_opera.css" />
+    <Content Include="RichTextEditor\skins\moono\editor.css" />
+    <Content Include="RichTextEditor\skins\moono\editor_gecko.css" />
+    <Content Include="RichTextEditor\skins\moono\editor_ie.css" />
+    <Content Include="RichTextEditor\skins\moono\editor_ie7.css" />
+    <Content Include="RichTextEditor\skins\moono\editor_ie8.css" />
+    <Content Include="RichTextEditor\skins\moono\editor_iequirks.css" />
+    <Content Include="RichTextEditor\skins\moono\icons.png" />
+    <Content Include="RichTextEditor\skins\moono\icons_hidpi.png" />
+    <Content Include="RichTextEditor\skins\moono\images\arrow.png" />
+    <Content Include="RichTextEditor\skins\moono\images\close.png" />
+    <Content Include="RichTextEditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="RichTextEditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="RichTextEditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="RichTextEditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="RichTextEditor\skins\moono\images\lock-open.png" />
+    <Content Include="RichTextEditor\skins\moono\images\lock.png" />
+    <Content Include="RichTextEditor\skins\moono\images\refresh.png" />
+    <Content Include="RichTextEditor\styles.js" />
+    <Content Include="Scripts\BTTAjaxFilesUploader.js" />
+    <Content Include="Scripts\BTTDropdownMenu.js" />
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\PageTilesTableScripts.js" />
+    <Content Include="Scripts\QuickAddDialogsScripts.js" />
+    <Content Include="Scripts\EditAuthorByAdmin.js" />
+    <Content Include="Scripts\BTTAjaxGridScripts.js" />
+    <Content Include="Scripts\hoverIntent.js" />
+    <Content Include="Scripts\jquery.dropdown.js" />
+    <Content Include="Scripts\jquery.dropdownPlain.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\ManageArticleScripts.js" />
+    <Content Include="Scripts\ManageUserPermissions.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\QuickSearchStringScript.js" />
+    <Content Include="Scripts\SiteQuickSearchScripts.js" />
+    <Content Include="Scripts\ValidationMessages.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Scripts\jquery-2.1.0.min.map" />
+    <Content Include="Views\Documents\SiteFilesGrid.cshtml" />
+    <Content Include="Views\Admin\TilesGrid.cshtml" />
+    <Content Include="Views\Admin\ManagePageTile.cshtml" />
+    <Content Include="Views\Shared\_YandexSearch.cshtml" />
+    <Content Include="Views\Shared\_PageTile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BTTechnologies.MedScience.Domain\BTTechnologies.MedScience.Domain.csproj">
+      <Project>{699645F8-0E03-4F04-8B1F-41C14D1AC7B0}</Project>
+      <Name>BTTechnologies.MedScience.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="ArticlesDocuments\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ActivateUser.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ChangeLogin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\RestorePassword.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\GetRestoreEmail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_AdminMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\UsersGrid.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_BTTAjaxGrid.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\ManageUserData.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_ManageUserPermissions.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Author\AuthorsGrid.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_LocalResources\MedSiteStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MedSiteStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Author\AddEditAuthor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_OkErrorHeaderPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Documents\DocumentsGrid.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Documents\ManageArticle.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\medicinescience.pubxml" />
+    <None Include="RichTextEditor\CHANGES.md" />
+    <None Include="RichTextEditor\LICENSE.md" />
+    <None Include="RichTextEditor\plugins\scayt\LICENSE.md" />
+    <None Include="RichTextEditor\plugins\scayt\README.md" />
+    <None Include="RichTextEditor\plugins\wsc\LICENSE.md" />
+    <None Include="RichTextEditor\plugins\wsc\README.md" />
+    <None Include="RichTextEditor\README.md" />
+    <None Include="RichTextEditor\skins\moono\readme.md" />
+    <Content Include="Views\Shared\_QuickSearchString.cshtml" />
+    <Content Include="Views\Shared\_QuickAddAuthorDialog.cshtml" />
+    <Content Include="Views\Shared\_QuickAddCategoryDialog.cshtml" />
+    <Content Include="Views\Log\ArticleLogGrid.cshtml" />
+    <Content Include="Views\ReadArticles\ShowAllArticlesList.cshtml" />
+    <Content Include="Views\Shared\_BTTSimplePager.cshtml" />
+    <Content Include="Views\ReadArticles\ShowArticleView.cshtml" />
+    <Content Include="Views\Shared\_BTTAjaxFilesUploader.cshtml" />
+    <Content Include="Views\ReadArticles\ShowAllAuthor.cshtml" />
+    <Content Include="Views\ReadArticles\ShowAllCategories.cshtml" />
+    <Content Include="Views\ReadArticles\ShowArticlesList.cshtml" />
+    <Content Include="Views\ReadArticles\_ArticleInfoView.cshtml" />
+    <Content Include="Views\ReadArticles\SearchResults.cshtml" />
+    <Content Include="Views\Shared\_SiteMetrics.cshtml" />
+    <Content Include="Views\Shared\_SiteQuickSearchPanel.cshtml" />
+    <Content Include="Views\Shared\_CaptchaView.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58988</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

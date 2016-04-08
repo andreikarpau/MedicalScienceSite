@@ -1,0 +1,22 @@
+﻿@model BTTechnologies.MedScience.MVC.Models.TilesPageModel
+
+@{
+    ViewBag.Title = MedSiteStrings.MainPageMenuItemAndTitle;
+    HTMLHelper.HideMainContentContainerStyle();
+}
+
+@section headSection{
+    <meta name='yandex-verification' content='53eba4461d6bcae9' />
+    <meta name="google-site-verification" content="7NSmEXycfhKkdvHbguF0gkLiYh44h7cWp1Tlo8JUQig" />
+    <meta name='wmail-verification' content='74172606f5786a04' />
+}
+
+@Html.GetTilesTable(Model.PageTiles)
+    
+@section LastModifiedMeta {
+    @Html.GetLastModifiedMeta(DateTime.Now)
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/PageTilesTableScripts")
+}

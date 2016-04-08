@@ -1,0 +1,21 @@
+﻿#BTTAjaxFilesUploaderContainer .progress-bar {
+    width: 350px;
+    height: 8px;
+    border: 1px solid #333;
+    margin-left: auto;
+    margin-right: auto;   
+    padding-top: 2px;
+    padding-bottom: 2px;
+    display: none;
+}
+
+#BTTAjaxFilesUploaderContainer .percentage-element {
+    width: 0%;
+    height: 100%;
+    
+    background-color: #0026FF;
+}
+
+#BTTAjaxFilesUploaderContainer .message-error {
+    display: none;    
+}

@@ -1,0 +1,13 @@
+﻿@using BTTechnologies.MedScience.Domain.Entities
+@model PageTile
+
+<div class="content-style">
+    @(new HtmlString(Model.Content ?? string.Empty))
+
+    @if (Model.TileType == TileTypes.NewOnSite)
+    {
+        <div class="new-on-site-content" newsurl="@Url.Action("GetNewOnTheSite", "ReadArticles")" articleurl="@Url.Action("ShowArticleView", "ReadArticles", new { id = 0 })"></div>
+        @Html.ActionLink(MedSiteStrings.More, "ShowAllArticlesList", "ReadArticles", null, new {@class = "not-switch-visited"})
+    }
+
+</div>

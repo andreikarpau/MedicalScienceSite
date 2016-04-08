@@ -1,0 +1,100 @@
+﻿@using BTTechnologies.MedScience.MVC.Infrastructure.Security
+@using BTTechnologies.MedScience.MVC.Models
+@model ViewArticleModel
+@{
+    ViewBag.Title = Model.DisplayName;
+    bool canManageArticle = ServicesHelper.GetMembershipService().UserHasPrivilege(HttpContext.Current.User.Identity.Name, Privilege.ManageDocumentPrivilege);
+}
+
+@if (canManageArticle)
+{
+    <a href="@Url.Action("ManageArticle", "Documents", new { id = Model.Id })">@MedSiteStrings.EditArticlePageLink</a>
+}
+
+<hgroup class="title">
+    <h1>@Model.DisplayName</h1>
+    <h4>@Model.DocumentDescription</h4>
+</hgroup>
+
+@if (Model.ArticleCategories.Any())
+{
+    <span> 
+        @foreach (CategoryModel category in Model.ArticleCategories)
+        {
+            @Html.ActionLink(category.CategoryDisplayName, "ShowCategoryArticles", new { id = category.CategoryId })
+
+            if (category != Model.ArticleCategories.Last())
+            {
+                @(", ")
+            }
+        }
+    </span>
+}
+
+@if (Model.ArticleAuthors.Any())
+{
+    <h3 class="left-text">@string.Format(MedSiteStrings.ColonWithSpaceAfter, MedSiteStrings.Authors, string.Empty)</h3>
+    <span> 
+        @foreach (AuthorModel author in Model.ArticleAuthors)
+        {
+            @Html.ActionLink(author.FullAuthorName, "ShowAuthorArticles", new { id = author.AuthorId })
+
+            if (author != Model.ArticleAuthors.Last())
+            {
+                @(", ")
+            }
+        }
+    </span>
+}
+
+@if (Model.ArticleAttachments.Any())
+{
+    <h3 class="left-text">@string.Format(MedSiteStrings.ColonWithSpaceAfter, MedSiteStrings.Documents, string.Empty)</h3>
+
+    foreach (AttachmentsModel attachments in Model.ArticleAttachments)
+    {
+        <a class="blockWithTopMargin" href="@Url.Content(attachments.AttachmentUrl)">@attachments.GetFullFileName()</a>
+    }
+}
+
+@if ((Model.ArticleAttachments.Any() || Model.ArticleAuthors.Any() && !string.IsNullOrEmpty(Model.Content) && !string.IsNullOrWhiteSpace(Model.Content)))
+{
+    <hr/>
+}
+
+<div id="ArticleContent" class="content-style">
+    @(new HtmlString(Model.Content))
+</div>
+
+<br/>
+<div class="all-articles-very-small-description">@Model.LastChangedDate.ToString("d MMMM yyyy")</div>
+
+<script type="text/javascript">
+(function () {
+    if (window.pluso) if (typeof window.pluso.start == "function") return;
+    if (window.ifpluso == undefined) {
+        window.ifpluso = 1;
+        var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+        s.type = 'text/javascript'; s.charset = 'UTF-8'; s.async = true;
+        s.src = ('https:' == window.location.protocol ? 'https' : 'http') + '://share.pluso.ru/pluso-like.js';
+        var h = d[g]('body')[0];
+        h.appendChild(s);
+    }
+})();</script>
+<div class="pluso" data-background="transparent" data-options="small,square,line,horizontal,counter,theme=05" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,yazakladki,email,print"></div>
+
+@section LastModifiedMeta {
+    @Html.GetLastModifiedMeta(Model.LastChangedDate)
+}
+
+@section TitleMeta {
+    @Html.GetTitleMeta(Model.DisplayName)
+}
+
+@section DescriptionMeta {
+    @Html.GetTitleMeta(Model.DocumentDescription)
+}
+
+@section KeyWordsMeta {
+    @Html.GetKeyWordsMeta(Html.GenerateKeyWordsForArticle(Model.ArticleCategories, Model.ArticleAttachments))
+}

@@ -1,0 +1,31 @@
+﻿.btt-quick-search-string-div {
+    border: 1px solid #395475;
+    padding: 2px;
+    display: block;
+}
+
+.btt-quick-search-string ol {        
+    list-style: none;
+    text-align: left;
+    margin: 2px;
+    padding-left:2px; 
+    list-style-position:inside;
+}
+
+.btt-quick-search-string li {
+    padding: 8px 0px 8px 0px;
+    border-bottom: 1px solid gray;
+}
+
+.btt-quick-search-string .search-item-description {
+    font-style: italic;
+    font-size: 0.8em; 
+    margin: 0;
+    color: gray;
+}
+
+.btt-quick-search-string .search-item-title {
+    display: block;
+    font-size: 1.3em;
+    margin: 0;
+}

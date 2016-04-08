@@ -1,0 +1,61 @@
+﻿@using BTTechnologies.MedScience.MVC.BTTClasses
+@using BTTechnologies.MedScience.MVC.Models
+@model ShowAllArticlesModel
+@{
+    ViewBag.Title = MedSiteStrings.ArticlesCatalog;
+    object creationDateAttr = null;
+    object modificationDateAttr = null;
+    object nameAttr = null;
+    
+    switch (Model.SelectedSortingType)
+    {
+        case ShowAllArticlesModel.SortingType.ByCreationDate:
+            creationDateAttr = new { @class = "selected" };
+            break;
+
+        case ShowAllArticlesModel.SortingType.ByModificationDate:
+            modificationDateAttr = new { @class = "selected" };
+            break;
+            
+        default:
+            nameAttr = new { @class = "selected" };
+            break;
+    }
+}
+
+@using (Html.BeginForm("ShowAllArticlesList", "ReadArticles", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <span>@MedSiteStrings.ReadAllArticlesDisplayNameFilterTitle</span> 
+    @Html.TextBoxFor(m => m.NameFilter)
+    <span class="buttonContainer">
+        <input type="submit" value="@MedSiteStrings.DoSearch" id="SearchButton" />
+    </span>
+
+    <span id="ReadArticleFilters">
+        @MedSiteStrings.SortingBy
+        @Html.ActionLink(@MedSiteStrings.ByCreationDate, "ShowAllArticlesList", new { id = 1, value = Model.NameFilter, value2 = ShowAllArticlesModel.SortingType.ByCreationDate.ToString() }, creationDateAttr)
+        @Html.ActionLink(@MedSiteStrings.ByModificationDate, "ShowAllArticlesList", new { id = 1, value = Model.NameFilter, value2 = ShowAllArticlesModel.SortingType.ByModificationDate.ToString() }, modificationDateAttr)
+        @Html.ActionLink(@MedSiteStrings.ByName, "ShowAllArticlesList", new { id = 1, value = Model.NameFilter, value2 = ShowAllArticlesModel.SortingType.ByTitle.ToString() }, nameAttr)
+    </span>
+}
+
+<hr>
+
+@if (!Model.ArticlesInfos.Any())
+{
+    <div class="centered-note middle-big-text">@MedSiteStrings.NoArticleFound</div>    
+}
+else
+{
+    <ul id="AllArticlesUl">
+        @foreach (ArticleInfo article in Model.ArticlesInfos)
+        {
+            <li>
+                @Html.Partial("_ArticleInfoView", article)
+                <div class="divider-horizontal-line"></div>
+            </li>
+        }    
+    </ul>
+
+    @Html.Partial("_BTTSimplePager", new BTTSimplePagerModel(Model.CurrentPage, Model.TotalPagesCount, i => @Url.Action("ShowAllArticlesList", new { id = i, value = Model.NameFilter, value2 = Model.SelectedSortingType.ToString() })))
+}

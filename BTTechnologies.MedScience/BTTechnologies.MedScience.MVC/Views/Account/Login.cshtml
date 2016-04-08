@@ -1,0 +1,47 @@
+﻿@model BTTechnologies.MedScience.MVC.Models.LoginModel
+
+@{
+    ViewBag.Title = MedSiteStrings.LogInTitle;
+}
+
+<hgroup class="title">
+    <h1>@MedSiteStrings.LogInTitle</h1>
+</hgroup>
+
+<section id="centeredForm">
+@using (Html.BeginForm(new { Model.ReturnUrl }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@MedSiteStrings.EnterFormTitle</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+            </li>
+            <li>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+            </li>
+            <li>
+                @Html.Partial("_CaptchaView")            
+            </li>
+        </ol>
+        <input type="submit" value="@MedSiteStrings.Enter" />
+    </fieldset>
+        
+    <p>
+        @MedSiteStrings.NoAccountInfo @Html.ActionLink(MedSiteStrings.Registration, "Register") 
+        <br>
+        @MedSiteStrings.ForgetPasswordInfo @Html.ActionLink(MedSiteStrings.RestoaringPasswordTitle, "GetRestoreEmail")
+    </p>
+}
+</section>

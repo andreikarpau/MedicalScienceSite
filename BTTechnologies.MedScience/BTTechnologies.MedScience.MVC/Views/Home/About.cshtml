@@ -1,0 +1,12 @@
+﻿@model BTTechnologies.MedScience.MVC.Models.TilesPageModel
+
+@{
+    ViewBag.Title = MedSiteStrings.AboutMenuItemAndPageTitle;
+    HTMLHelper.HideMainContentContainerStyle();
+}
+
+@Html.GetTilesTable(Model.PageTiles)
+
+@section scripts {
+    @Scripts.Render("~/bundles/PageTilesTableScripts")
+}

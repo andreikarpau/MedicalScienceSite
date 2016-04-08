@@ -1,0 +1,31 @@
+﻿@model BTTechnologies.MedScience.MVC.Models.GetEmailModel
+
+@{
+    ViewBag.Title = MedSiteStrings.RestoaringPasswordTitle;
+}
+
+<hgroup class="title">
+    <h1>@MedSiteStrings.RestoaringPasswordTitle</h1>
+</hgroup>
+
+<section id="centeredForm">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>Ввести e-mail</legend>
+            <ol>
+                <li>
+                    @Html.LabelFor(m => m.UserLogin)
+                    @Html.ValidationMessageFor(m => m.UserLogin)
+                    @Html.TextBoxFor(m => m.UserLogin)
+                </li>
+                <li>
+                    @Html.Partial("_CaptchaView")          
+                </li>
+            </ol>
+            <input type="submit" value="@MedSiteStrings.Next" />
+        </fieldset>
+    }
+</section>

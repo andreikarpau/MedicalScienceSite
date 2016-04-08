@@ -1,0 +1,24 @@
+﻿@model BTTechnologies.MedScience.MVC.BTTClasses.BTTAjaxGridModel
+
+@{
+    ViewBag.Title = MedSiteStrings.ArticlesList;
+}
+
+<hgroup class="title">
+    <h1>@MedSiteStrings.ArticlesList</h1>
+</hgroup>
+
+@using (Html.BeginForm("DocumentsGrid", "Documents", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <span><button>@MedSiteStrings.AddNewArticle</button></span>
+}
+
+@Html.Partial("_BTTAjaxGrid", Model)
+
+@section scripts {
+    @Scripts.Render("~/bundles/BTTAjaxGrid")
+    
+    <script type="text/javascript">
+        GetGridData("@Model.TableName");
+    </script>
+}

@@ -1,0 +1,6 @@
+﻿@using CaptchaMvc.HtmlHelpers
+
+<div id="captchaMedScienceContainer">
+    @Html.ValidationMessage("captcha")
+    @Html.Captcha(MedSiteStrings.Refresh, MedSiteStrings.InputCaptchaText, 5, MedSiteStrings.FieldShouldBeFilled)
+</div>  

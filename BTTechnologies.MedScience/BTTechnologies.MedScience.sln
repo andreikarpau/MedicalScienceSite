@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTTechnologies.MedScience.Domain", "BTTechnologies.MedScience.Domain\BTTechnologies.MedScience.Domain.csproj", "{699645F8-0E03-4F04-8B1F-41C14D1AC7B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTTechnologies.MedScience.MVC", "BTTechnologies.MedScience.MVC\BTTechnologies.MedScience.MVC.csproj", "{5221241F-BFB3-4DE0-BCC8-A6292D53BBE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedScienceUnitTests", "MedScienceUnitTests\MedScienceUnitTests.csproj", "{97371A1F-B6A5-481D-A418-A5B9E28CCA3F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8DFCF654-F09C-440D-B920-B4A455AECB6D}"
+	ProjectSection(SolutionItems) = preProject
+		BTTechnologies.MedScience.vsmdi = BTTechnologies.MedScience.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs11
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BTTechnologies.MedScience.Domain\\BTTechnologies.MedScience.Domain.csproj
+		SccProjectName1 = BTTechnologies.MedScience.Domain
+		SccLocalPath1 = BTTechnologies.MedScience.Domain
+		SccProjectUniqueName2 = BTTechnologies.MedScience.MVC\\BTTechnologies.MedScience.MVC.csproj
+		SccProjectName2 = BTTechnologies.MedScience.MVC
+		SccLocalPath2 = BTTechnologies.MedScience.MVC
+		SccProjectUniqueName3 = MedScienceUnitTests\\MedScienceUnitTests.csproj
+		SccProjectName3 = MedScienceUnitTests
+		SccLocalPath3 = MedScienceUnitTests
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = BTTechnologies.MedScience.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{699645F8-0E03-4F04-8B1F-41C14D1AC7B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{699645F8-0E03-4F04-8B1F-41C14D1AC7B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{699645F8-0E03-4F04-8B1F-41C14D1AC7B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{699645F8-0E03-4F04-8B1F-41C14D1AC7B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5221241F-BFB3-4DE0-BCC8-A6292D53BBE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5221241F-BFB3-4DE0-BCC8-A6292D53BBE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5221241F-BFB3-4DE0-BCC8-A6292D53BBE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5221241F-BFB3-4DE0-BCC8-A6292D53BBE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97371A1F-B6A5-481D-A418-A5B9E28CCA3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97371A1F-B6A5-481D-A418-A5B9E28CCA3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97371A1F-B6A5-481D-A418-A5B9E28CCA3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97371A1F-B6A5-481D-A418-A5B9E28CCA3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
